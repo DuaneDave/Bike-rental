@@ -9,23 +9,23 @@ function SignUp() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  // const history = useHistory();
+  const history = useHistory();
 
-  // const handleUsernameChange = (e) => {
-  //   setUsername(e.target.value);
-  // };
+  const handleUsernameChange = (e) => {
+    setUsername(e.target.value);
+  };
 
-  // const handleEmailChange = (e) => {
-  //   setEmail(e.target.value);
-  // };
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
 
-  // const handlePasswordChange = (e) => {
-  //   setPassword(e.target.value);
-  // };
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
 
-  // const handleConfirmPasswordChange = (e) => {
-  //   setConfirmPassword(e.target.value);
-  // };
+  const handleConfirmPasswordChange = (e) => {
+    setConfirmPassword(e.target.value);
+  };
 
   // const handleSubmit = (e) => {
   //   e.preventDefault();
