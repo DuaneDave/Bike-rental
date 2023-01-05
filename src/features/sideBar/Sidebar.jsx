@@ -6,13 +6,10 @@ import {useState} from 'react'
 const Sidebar = () => {
   const [toggled,setToggled ]= useState(false)
 
-  const hancleClick = () => {
-    setToggled(!toggled)
-  }
   
   return (
     <div>
-      <TogButton  onclick = {hancleClick}color={toggled ? "green" : "red"} text = {toggled ? "<<" : ">>"}/><br/>
+      <TogButton  onclick = {() => setToggled(!toggled)}color={toggled ? "green" : "red"} text = {toggled ? "<<" : ">>"}/><br/>
       <Link to= "/">Brand</Link><br/>
       <Link to = "/reserve">Reserve</Link><br/>
       <Link to= "my-reservations">My reservations</Link><br/>
