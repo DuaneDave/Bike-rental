@@ -2,7 +2,7 @@ function Input({ label, type, value, onChange }) {
   return (
     <div>
       <label htmlFor={label}>{label}</label>
-      <input type={type} />
+      <input type={type} onChange={onChange} value={value} />
     </div>
   );
 }
