@@ -9,8 +9,6 @@ function SignUp() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const history = useHistory();
-
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
   };
