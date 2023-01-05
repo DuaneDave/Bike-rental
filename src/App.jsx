@@ -6,7 +6,7 @@ import LogIn from "./pages/LogIn";
 function App() {
   return (
     <>
-      <Sidebar />
+      {/* <Sidebar /> */}
       <Router>
         <Routes>
           <Route path="/" element={<LogIn />} />
