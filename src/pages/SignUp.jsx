@@ -27,36 +27,36 @@ function SignUp() {
     setConfirmPassword(e.target.value);
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  //   if (!username || !email || !password || !confirmPassword) {
-  //     alert('Please fill in all fields');
-  //     return;
-  //   } else if (password !== confirmPassword) {
-  //     alert('Passwords do not match');
-  //     return;
-  //   } else if (password.length < 6) {
-  //     alert('Password must be at least 6 characters');
-  //     return;
-  //   } else if (username.length < 3) {
-  //     alert('Username must be at least 3 characters');
-  //     return;
-  //   } else if (!email.includes('@')) {
-  //     alert('Please enter a valid email');
-  //     return;
-  //   } else {
-  //     const data = { username, email, password, confirmPassword };
-  //     localStorage.setItem('data', JSON.stringify(data));
-  //   }
+    if (!username || !email || !password || !confirmPassword) {
+      alert('Please fill in all fields');
+      return;
+    } else if (password !== confirmPassword) {
+      alert('Passwords do not match');
+      return;
+    } else if (password.length < 6) {
+      alert('Password must be at least 6 characters');
+      return;
+    } else if (username.length < 3) {
+      alert('Username must be at least 3 characters');
+      return;
+    } else if (!email.includes('@')) {
+      alert('Please enter a valid email');
+      return;
+    } else {
+      const data = { username, email, password, confirmPassword };
+      localStorage.setItem('data', JSON.stringify(data));
+    }
 
-  //   setUsername('');
-  //   setEmail('');
-  //   setPassword('');
-  //   setConfirmPassword('');
+    setUsername('');
+    setEmail('');
+    setPassword('');
+    setConfirmPassword('');
 
-  //   window.location.href = '/';
-  // };
+    window.location.href = '/';
+  };
 
   return (
     <form onSubmit={handleSubmit}>
