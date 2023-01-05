@@ -1,12 +1,46 @@
-import Input from "../reusables/inputFields/Inputs";
+import { useState } from 'react';
+
+import Input from '../reusables/inputFields/Inputs';
 
 function LogIn() {
-  return (
-    <form>
-      <Input label="Email" />
-      <Input label="Password" />
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-      <button type="submit">Log In</button>
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log(email, password);
+
+    setEmail('');
+    setPassword('');
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <Input
+        label='Email'
+        type='email'
+        value={email}
+        onChange={handleEmailChange}
+      />
+      <Input
+        label='Password'
+        type='password'
+        value={password}
+        onChange={handlePasswordChange}
+      />
+
+      <button type='submit'>Log In</button>
     </form>
   );
 }
+
+export default LogIn;
