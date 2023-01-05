@@ -8,7 +8,6 @@ import Home from "./pages/Home";
 function App() {
   return (
     <>
-      {/* <Sidebar /> */}
       <Router>
         <Routes>
           <Route path="/" element={<LogIn />} />
