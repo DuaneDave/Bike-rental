@@ -1,12 +1,7 @@
-import { toggle } from "./togButtonSlice"
-import  { useDispatch } from 'react-redux'
 
-
-const TogButton = ({color,text}) => {
-  const dispatch = useDispatch()
-
+const TogButton = ({color,text, onclick}) => {
   return (
-    <button onClick={() => dispatch(toggle())} style={{backgroundColor: color}}>{text}</button>
+    <button onClick={onclick} style={{backgroundColor: color}}>{text}</button>
     ) 
   }
 

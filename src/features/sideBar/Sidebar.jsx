@@ -1,14 +1,18 @@
-import { Link } from "react-router-dom"
-import { useSelector, useDispatch } from "react-redux"
+import { Link } from 'react-router-dom'
 import TogButton  from '../togButton/TogButton'
+import {useState} from 'react'
 
 
 const Sidebar = () => {
-  const toggled = useSelector(state => state.togbutton.toggled)
+  const [toggled,setToggled ]= useState(false)
+
+  const hancleClick = () => {
+    setToggled(!toggled)
+  }
   
   return (
     <div>
-      <TogButton  color={toggled ? "green" : "red"} text = {toggled ? "<<" : ">>"}/><br/>
+      <TogButton  onclick = {hancleClick}color={toggled ? "green" : "red"} text = {toggled ? "<<" : ">>"}/><br/>
       <Link to= "/">Brand</Link><br/>
       <Link to = "/reserve">Reserve</Link><br/>
       <Link to= "my-reservations">My reservations</Link><br/>
