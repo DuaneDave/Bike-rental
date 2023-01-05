@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import TogButton  from '../../components/TogButton'
+import TogButton  from './togButton/TogButton'
 import {useState} from 'react'
 
 

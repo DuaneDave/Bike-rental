@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import Sidebar from './features/sideBar/Sidebar'
+import Sidebar from './components/sideBar/Sidebar'
 
 function App() {
 
