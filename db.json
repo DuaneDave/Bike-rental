@@ -1,0 +1,33 @@
+{
+  "bikes": [
+    {
+      "id": 1,
+      "model": "Fuel EXe 9.9 XX1 AXS",
+      "description":"Fuel EXe 9.9 XX1 AXS is mountain biking elevated. It rolls into untouched terrain that lies between traditional mountain bikes and e-bikes with new technology that silently blends in with nature, and the finest components the industry offers. From its light and stiff carbon frame and wheels to tiny but mighty TQ transmission, EXe 9,.9 is eager to rally any trail. It spares no expense, with SRAM XX1 AXS drivetrain that's as precise as it is eye-catching, and it's loaded with an ultimate RockShox suspension package equipped with AirWiz technology to keep your setup dialed just to your liking." ,
+      "color": "red",
+      "images": "https://trek.scene7.com/is/image/TrekBicycleProducts/FuelEXe99XX1AXS_23_36373_B_Primary?$responsive-pjpg$&cache=on,on&wid=480&hei=360"
+
+    },
+    {
+      "id": 2,
+      "model": "Fuel EXe 9.9 XX1 ",
+      "description":"Fuel EXe 9.9 XTR redefines next level mountain biking with a package that ticks every box— and then some. From its quiet TQ transmission that blends in with nature to its carbon wheels and frame dressed to the nines with top-tier Shimano XTR drivetrain, the EXe 9.9 is ready to rip. The upgraded, supple and smooth RockShox suspension package keeps you floating over the chunder while the quiet assist of TQ feels like a welcome tailwind when you're pushing up quad-crushing climbs." ,
+      "color": 1,
+      "images": "https://trek.scene7.com/is/image/TrekBicycleProducts/FuelEXe99XTR_23_36371_B_Primary?$responsive-pjpg$&cache=on,on&wid=480&hei=360"
+    },
+    {
+      "id": 3,
+      "model": "Slash 9.9 XX1 Flight Attendant",
+      "description":"Slash 9.9 XX1 is an absolute unit of an enduro machine ready to rip descents and top speed and hammer back to the top for the next stage. It's fully equipped top to bottom, with a stiff and light carbon frame and hoops, SRAM XX1 AXS fully wireless drivetrain, and an upgraded suspension package decked out with Flight Assist technology that reads the terrain and your riding to adjust your suspension from open to closed automatically, so you've got stiff support when its time to pedal hard, and soft, supple cushion through the rough and rowdy without having to think twice." ,
+      "color": 1,
+      "images":"https://trek.scene7.com/is/image/TrekBicycleProducts/FuelEXe99XX1AXS_23_36373_B_Primary?$responsive-pjpg$&cache=on,on&wid=480&hei=360"
+    },
+    {
+      "id": 4,
+      "model": "Supercaliber 9.9 XX1 AXS",
+      "description":"Supercaliber 9.9 XX1 AXS is the fastest, lightest, and most capable cross country race bike we make. The exclusive IsoStrut integrated shock is the cornerstone of Supercaliber's efficient suspension system, giving you a fast and light ride that charges through rugged terrain at breakneck speed. A high-end mountain bike parts spec features a fully wireless SRAM XX1 Eagle AXS electronic drivetrain." ,
+      "color": 1,
+      "images":  "https://trek.scene7.com/is/image/TrekBicycleProducts/FuelEXe99XX1AXS_23_36373_B_Primary?$responsive-pjpg$&cache=on,on&wid=480&hei=360"
+    }
+  ]
+}
