@@ -29,8 +29,15 @@ function SignUp() {
       alert('Please enter a valid email');
       return;
     } else {
-      const data = { username, email, password, confirmPassword };
-      localStorage.setItem('data', JSON.stringify(data));
+      if (localStorage.getItem('avatar')) {
+        const avatar = JSON.parse(localStorage.getItem('avatar'));
+        const data = { username, email, password, confirmPassword, avatar };
+        localStorage.setItem('data', JSON.stringify(data));
+        localStorage.removeItem('avatar');
+      } else {
+        const data = { username, email, password, confirmPassword };
+        localStorage.setItem('data', JSON.stringify(data));
+      }
     }
 
     setUsername('');
