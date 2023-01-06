@@ -4,13 +4,14 @@ import {useState} from 'react'
 import Brand from './brand/Brand'
 
 
+
 const Sidebar = () => {
   const [toggled,setToggled ]= useState(false)
 
   
   return (
     <div>
-      <Brand/>
+      {/* <Brand/> */}
       <TogButton  onclick = {() => setToggled(!toggled)}color={toggled ? "green" : "red"} text = {toggled ? "<<" : ">>"}/><br/>
       <Link to= "/">Brand</Link><br/>
       <Link to = "/reserve">Reserve</Link><br/>

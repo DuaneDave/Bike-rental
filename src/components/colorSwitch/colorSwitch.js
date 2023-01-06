@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const intialState = {
+const initialState = {
   color : null
 }
 export const colorSwitchSlice = createSlice({
   name:"colorSwitch",
-  intialState,
+  initialState,
   reducers: {
    colorSwitched(state, action) {
     state.color = action.payload
@@ -13,5 +13,5 @@ export const colorSwitchSlice = createSlice({
   }
 })
 
-export const {colorSwitched} = colorSwitchSlice.actions
-export default colorSwitchSlice.reducer
+export const { colorSwitched } = colorSwitchSlice.actions
+export default colorSwitchSlice

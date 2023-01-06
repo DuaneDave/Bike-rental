@@ -14,7 +14,7 @@ const BikeList = () => {
   let content
 
   if(isLoading){
-   content = <Spiner text="Loading..." />
+   content = <Spiner />
   } else if(isSuccess){
     content = Bikes.map(bike => <Bike key={bike.id} bike={bike} />)
   } else if(isError){
