@@ -2,6 +2,7 @@ import UseChange from '../hooks/UseChange';
 import { Link } from 'react-router-dom';
 
 import Input from '../reusables/inputFields/Inputs';
+import FileUpload from '../reusables/inputFields/FileUpload';
 
 function SignUp() {
   const [username, handleUsernameChange] = UseChange('');
@@ -42,6 +43,7 @@ function SignUp() {
 
   return (
     <form onSubmit={handleSubmit}>
+      <FileUpload label='Upload Avatar' />
       <Input
         label='Username'
         type='text'
