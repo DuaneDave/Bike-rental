@@ -1,29 +1,10 @@
-import { useEffect, useState } from 'react';
-
 import { BsFileEarmarkDiff } from 'react-icons/bs';
 import { MdOutlineAttachFile } from 'react-icons/md';
 
-function FileUpload({ label, className }) {
-  const [file, setFile] = useState(null);
-  const [preview, setPreview] = useState(null);
-
-  useEffect(() => {
-    if (file) {
-      setPreview(URL.createObjectURL(file));
-    }
-  }, [file]);
-
-  const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
-
-    if (e.target.files[0]) {
-      localStorage.setItem('avatar', e.target.files[0]);
-    }
-  };
-
+function FileUpload({ label, className, preview, handleFileChange, file }) {
   return (
     <div>
-      <div>
+      <div className='view'>
         {preview ? (
           <img src={preview} alt={file.name} />
         ) : (
