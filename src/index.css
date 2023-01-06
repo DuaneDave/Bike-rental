@@ -94,3 +94,8 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.view img {
+  width: 100px;
+  height: 100px;
+}
