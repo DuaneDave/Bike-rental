@@ -1,29 +1,13 @@
-import { useState } from 'react';
+import UseChange from '../hooks/UseChange';
 import { Link } from 'react-router-dom';
 
 import Input from '../reusables/inputFields/Inputs';
 
 function SignUp() {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-
-  const handleUsernameChange = (e) => {
-    setUsername(e.target.value);
-  };
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const handleConfirmPasswordChange = (e) => {
-    setConfirmPassword(e.target.value);
-  };
+  const [username, handleUsernameChange] = UseChange('');
+  const [email, handleEmailChange] = UseChange('');
+  const [password, handlePasswordChange] = UseChange('');
+  const [confirmPassword, handleConfirmPasswordChange] = UseChange('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -62,25 +46,25 @@ function SignUp() {
         label='Username'
         type='text'
         value={username}
-        onChange={handleUsernameChange}
+        onChange={(e) => handleUsernameChange(e)}
       />
       <Input
         label='Email'
         type='email'
         value={email}
-        onChange={handleEmailChange}
+        onChange={(e) => handleEmailChange(e)}
       />
       <Input
         label='Password'
         type='password'
         value={password}
-        onChange={handlePasswordChange}
+        onChange={(e) => handlePasswordChange(e)}
       />
       <Input
         label='Confirm Password'
         type='password'
         value={confirmPassword}
-        onChange={handleConfirmPasswordChange}
+        onChange={(e) => handleConfirmPasswordChange(e)}
       />
 
       <button type='submit'>Sign Up</button>
