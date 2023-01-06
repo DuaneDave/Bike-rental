@@ -1,28 +1,17 @@
 import { useState } from 'react';
+import UseChange from '../hooks/UseChange';
+
 import { Link } from 'react-router-dom';
 
 import Input from '../reusables/inputFields/Inputs';
 
 function LogIn() {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleUsernameChange = (e) => {
-    setUsername(e.target.value);
-  };
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
+	const [username, handleUsernameChange] = UseChange('');
+	const [email, handleEmailChange] = UseChange('');
+	const [password, handlePasswordChange] = UseChange('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username);
 
     if (!username || !email || !password) {
       alert('Please fill in all fields');
@@ -44,8 +33,9 @@ function LogIn() {
       }
     }
 
-    setEmail('');
-    setPassword('');
+		handleUsernameChange('');
+		handleEmailChange('');
+		handlePasswordChange('');
   };
 
   return (
@@ -54,19 +44,19 @@ function LogIn() {
         label='Username'
         type='text'
         value={username}
-        onChange={handleUsernameChange}
+        onChange={(e) => handleUsernameChange(e)}
       />
       <Input
         label='Email'
         type='email'
         value={email}
-        onChange={handleEmailChange}
+        onChange={(e) => handleEmailChange(e)}
       />
       <Input
         label='Password'
         type='password'
         value={password}
-        onChange={handlePasswordChange}
+        onChange={(e) => handlePasswordChange(e)}
       />
 
       <button type='submit'>Log In</button>
