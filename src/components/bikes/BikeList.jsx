@@ -11,21 +11,12 @@ const BikeList = () => {
     error
   } = useGetBikesQuery()
 
-  let content
-
-  if(isLoading){
-   content = <Spiner />
-  } else if(isSuccess){
-    content = Bikes.map(bike => <Bike key={bike.id} bike={bike} />)
-  } else if(isError){
-    <div>{error.toString()}</div>
-  }
-  console.log(Bikes);
-
   return (
-    <div>
-     { content } 
-    </div>
+    <di>
+      {isLoading && <Spiner />}
+      {isSuccess && Bikes.map(bike => <Bike key={bike.id} bike={bike} />)}
+      {isError && error.toString()}
+    </di>
   )
 }
 
