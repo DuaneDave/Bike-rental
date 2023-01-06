@@ -12,11 +12,11 @@ const BikeList = () => {
   } = useGetBikesQuery()
 
   return (
-    <di>
+    <div>
       {isLoading && <Spiner />}
       {isSuccess && Bikes.map(bike => <Bike key={bike.id} bike={bike} />)}
       {isError && error.toString()}
-    </di>
+    </div>
   )
 }
 
