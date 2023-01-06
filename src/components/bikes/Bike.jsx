@@ -1,10 +1,15 @@
 import ColorSwitch from '../colorSwitch/ColorSwitch'
 import { useSelector } from 'react-redux'
-import { useEffect } from 'react'
+import {useState} from 'react';
 
 const Bike = ({bike}) => {
-  // useEffect()
-const color = useSelector(state => state.colorswitch.color)
+
+  // const color = useSelector(state => state.colorswitch.color)
+  const [color,setColor] = useState(null)
+  const changeColor = (input) => {
+    setColor(input)
+  }
+
   return (
     <div>
       <img src={ bike.images[color] || bike.images[Object.keys(bike.images)[0]] }></img>
@@ -12,7 +17,7 @@ const color = useSelector(state => state.colorswitch.color)
       <p> { bike.description }</p>
       <div>
        {bike.colors.map(color => (
-          <ColorSwitch key={color}input = {color} />
+          <ColorSwitch  key={color} changeColor={changeColor} input = {color} />
        )) }
       </div>
     </div>

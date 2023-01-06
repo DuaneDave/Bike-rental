@@ -1,8 +1,6 @@
 import { useDispatch } from "react-redux"
-import {colorSwitched} from './colorSwitch';
 
-const ColorSwitch = ({input}) => {
-  const dispatch = useDispatch()
+const ColorSwitch = ({input, changeColor}) => {
   let color;
   switch(input) {
     case "red":
@@ -30,7 +28,7 @@ const ColorSwitch = ({input}) => {
       color = "black"
   }  
   return (
-      <button style={{backgroundColor:color}} onClick={() => dispatch(colorSwitched(color))} >switch</button>
+      <button style={{backgroundColor:color}} onClick={() => changeColor(color)} >switch</button>
   )
 }
 
