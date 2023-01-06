@@ -15,6 +15,10 @@ function FileUpload({ label, className }) {
 
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
+
+    if (e.target.files[0]) {
+      localStorage.setItem('avatar', e.target.files[0]);
+    }
   };
 
   return (
