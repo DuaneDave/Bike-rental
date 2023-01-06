@@ -1,4 +1,5 @@
 import UseChange from '../hooks/UseChange';
+import UseFileUpload from '../hooks/useFileUpload';
 import { Link } from 'react-router-dom';
 
 import Input from '../reusables/inputFields/Inputs';
@@ -9,6 +10,7 @@ function SignUp() {
   const [email, handleEmailChange] = UseChange('');
   const [password, handlePasswordChange] = UseChange('');
   const [confirmPassword, handleConfirmPasswordChange] = UseChange('');
+  const { file, preview, handleFileChange } = UseFileUpload();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,28 +31,21 @@ function SignUp() {
       alert('Please enter a valid email');
       return;
     } else {
-      if (localStorage.getItem('avatar')) {
-        const avatar = JSON.parse(localStorage.getItem('avatar'));
-        const data = { username, email, password, confirmPassword, avatar };
-        localStorage.setItem('data', JSON.stringify(data));
-        localStorage.removeItem('avatar');
-      } else {
-        const data = { username, email, password, confirmPassword };
-        localStorage.setItem('data', JSON.stringify(data));
-      }
+      const avatar = file ? preview : null;
+      const data = { username, email, password, confirmPassword, avatar };
+      localStorage.setItem('user', JSON.stringify(data));
     }
-
-    setUsername('');
-    setEmail('');
-    setPassword('');
-    setConfirmPassword('');
 
     window.location.href = '/';
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <FileUpload label='Upload Avatar' />
+      <FileUpload
+        file={file}
+        preview={preview}
+        handleFileChange={handleFileChange}
+      />
       <Input
         label='Username'
         type='text'
