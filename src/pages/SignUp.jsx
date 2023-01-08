@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import Input from '../reusables/inputFields/Inputs';
 import FileUpload from '../reusables/inputFields/FileUpload';
+import Container from '../reusables/container/Container';
 
 function SignUp() {
   const [username, handleUsernameChange] = UseChange('');
@@ -40,43 +41,46 @@ function SignUp() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <FileUpload
-        file={file}
-        preview={preview}
-        handleFileChange={handleFileChange}
-      />
-      <Input
-        label='Username'
-        type='text'
-        value={username}
-        onChange={(e) => handleUsernameChange(e)}
-      />
-      <Input
-        label='Email'
-        type='email'
-        value={email}
-        onChange={(e) => handleEmailChange(e)}
-      />
-      <Input
-        label='Password'
-        type='password'
-        value={password}
-        onChange={(e) => handlePasswordChange(e)}
-      />
-      <Input
-        label='Confirm Password'
-        type='password'
-        value={confirmPassword}
-        onChange={(e) => handleConfirmPasswordChange(e)}
-      />
-
-      <button type='submit'>Sign Up</button>
-
-      <p>
-        Already have an account? <Link to='/'>Log In</Link>
-      </p>
-    </form>
+    <Container>
+      <form onSubmit={handleSubmit} className='flex flex-column'>
+        <FileUpload
+          file={file}
+          preview={preview}
+          handleFileChange={handleFileChange}
+        />
+        <Input
+          label='Username'
+          type='text'
+          value={username}
+          onChange={(e) => handleUsernameChange(e)}
+        />
+        <Input
+          label='Email'
+          type='email'
+          value={email}
+          onChange={(e) => handleEmailChange(e)}
+        />
+        <Input
+          label='Password'
+          type='password'
+          value={password}
+          onChange={(e) => handlePasswordChange(e)}
+        />
+        <Input
+          label='Confirm Password'
+          type='password'
+          value={confirmPassword}
+          onChange={(e) => handleConfirmPasswordChange(e)}
+        />
+        <button type='submit'>Sign Up</button>
+        <span className='flex gap'>
+          <p>Already have an account?</p>
+          <Link to='/' className='redirect'>
+            Log In
+          </Link>
+        </span>
+      </form>
+    </Container>
   );
 }
 
