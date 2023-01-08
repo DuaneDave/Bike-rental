@@ -2,7 +2,7 @@ import React from 'react'
 import BikeList from '../components/bikes/BikeList'
 import Sidebar from '../components/sideBar/Sidebar'
 
-const Home = () => {
+const Bikes = () => {
   return (
     <div>
       <Sidebar />
@@ -11,4 +11,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Bikes

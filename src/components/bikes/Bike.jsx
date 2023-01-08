@@ -12,7 +12,7 @@ const Bike = ({bike}) => {
 
 
   return (
-    <div > 
+    <div onClick={toggleDetails}> 
       <img src={ bike.images[color] || bike.images[Object.keys(bike.images)[0]] }></img>
       <h3>{ bike.model }</h3>
       <p> { bike.description.substring(0,100) }...</p>

@@ -6,7 +6,7 @@ import Spiner from '../components/spiner/Spiner';
 
 
 const Details = () => {
-  const {id} = useParams()
+  const {param} = useParams()
   const {
     data:Bikes,
     isLoading,
@@ -14,7 +14,6 @@ const Details = () => {
     isError,
     error
   } = useGetBikesQuery()
-
 
   
   return (
@@ -24,7 +23,7 @@ const Details = () => {
       {isError && error.toString}
       {isSuccess && <>
         <Sidebar  />
-        <Bike bike = { Bikes.find( ({ id }) => id === id )}/>
+        <Bike bike = { Bikes.find( ({ id }) => id == param )}/>
       </>}
     </div>
   )
