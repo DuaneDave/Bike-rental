@@ -26,9 +26,6 @@ const Details = () => {
         <Sidebar  />
         <Bike bike = { Bikes.find( ({ id }) => id === id )}/>
       </>}
-        
-        
-      
     </div>
   )
 }
