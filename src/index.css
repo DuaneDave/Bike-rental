@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap');
 
+:root {
+  --light-dark:#3a3a3a;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -18,10 +22,31 @@ button {
   border: none;
   cursor: pointer;
   padding: 0.6rem 2rem;
-  background: limegreen;
+  background: rgb(51, 153, 51);
   border-radius: 30px;
   color: white;
   font-family: inherit;
+}
+
+input:not([type='file']) {
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  padding: 0.2rem 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+input:not([type='file']):focus {
+  border: none;
+  outline: 1px solid rgba(5, 160, 5, 0.5);
+}
+
+label {
+  font-size: 0.8rem;
+  color: var(--light-dark);
+  margin-bottom: 0.2rem;
 }
 
 h1,
@@ -38,12 +63,62 @@ body {
   font-weight: 300;
 }
 
+form {
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+form span {
+  font-size: 0.8rem;
+  justify-content: center;
+  color: var(--light-dark);
+  margin-top: 0.3rem;
+}
+
+form button {
+  align-self: center;
+  padding-inline: 5rem;
+  margin-top: 0.7rem;
+}
+
 .grid {
   display: grid;
 }
 
 .flex {
   display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.gap {
+  gap: 1rem;
+}
+
+.redirect {
+  color: steelblue;
+}
+
+.redirect:hover {
+  text-decoration: underline;
+}
+
+.avatar img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  right: 2rem;
+  top: 2rem;
+  border: 2px solid #ccc;
+  position: fixed;
+  z-index: 20;
 }
 
 .home-background {
@@ -54,6 +129,7 @@ body {
   width: 100%;
   height: 100vh;
   position: relative;
+  filter: blur(1px);
 }
 
 .home-background::before {
@@ -63,7 +139,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.733), rgba(0, 0, 0, 0.288));
+  background: linear-gradient(rgba(0, 0, 0, 0.623), rgba(0, 0, 0, 0.363));
 }
 
 .content {
@@ -84,18 +160,15 @@ body {
 
 .content h2 {
   font-family: 'Poppins', sans-serif;
-  font-size: clamp(1.2rem, 2vw, 2rem);
+  font-size: clamp(0.9rem, 2vw, 1rem);
   font-weight: 400;
   margin-top: 0.5rem;
+  color: rgb(245, 245, 245);
+  word-spacing: 2px;
 }
 
 .home-cta {
   gap: 2rem;
   justify-content: center;
   align-items: center;
-}
-
-.view img {
-  width: 100px;
-  height: 100px;
 }
