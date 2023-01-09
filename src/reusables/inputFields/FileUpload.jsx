@@ -1,5 +1,6 @@
 import { CiUser } from 'react-icons/ci'
-import { MdOutlineAttachFile } from 'react-icons/md';
+import { MdOutlineCloudUpload } from 'react-icons/md';
+
 
 import styles from './Input.module.css';
 
@@ -16,7 +17,7 @@ function FileUpload({ label, preview, handleFileChange, file }) {
         )}
       </div>
       <label className={styles.upload}>
-        Upload photo <MdOutlineAttachFile />
+        Upload photo <MdOutlineCloudUpload />
         <input type='file' onChange={handleFileChange} />
       </label>
     </div>
