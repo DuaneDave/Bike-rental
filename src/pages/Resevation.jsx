@@ -7,6 +7,14 @@ const now = new Date();
 const today = `${now.getFullYear()}/${now.getMonth() + 1}/${now.getDate()}`;
 const user = JSON.parse(localStorage.getItem('user'));
 
+// const url = 'https://bike-web.herokuapp.com/api/v1/reservations'
+// {
+//   user_id
+//   bike_id
+//   reservation_date
+//   due_date
+// }
+
 const data = [
   {
     id: 1,
