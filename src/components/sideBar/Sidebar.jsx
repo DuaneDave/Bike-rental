@@ -27,7 +27,7 @@ function Sidebar() {
       </button>
 
       <span className={styles.avatar}>
-        {avatar ? (
+        {avatar.avatar ? (
           <img src={avatar.avatar} />
         ) : (
           <span className='flex center'>
