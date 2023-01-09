@@ -6,7 +6,9 @@ import Spiner from '../components/spiner/Spiner';
 
 
 const Details = () => {
+  
   const {param} = useParams()
+
   const {
     data:Bikes,
     isLoading,

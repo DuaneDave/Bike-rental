@@ -15,7 +15,9 @@ const BikeList = () => {
   return (
     <div>
       {isLoading && <Spiner />}
-      {isSuccess && Bikes.map(bike => <Link  to= {`${bike.id}`}  key={bike.id} ><Bike bike={bike} /></Link>)}
+      {isSuccess && Bikes.map(bike => (
+      <Bike bike={bike} />
+      ))}
       {isError && error.toString()}
     </div>
   )

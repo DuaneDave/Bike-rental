@@ -9,9 +9,6 @@ const ColorSwitch = ({input, changeColor}) => {
     case "white":
       color =  "white"
       break;
-    case "green":
-      color =  "green"
-    break;
     case "yellow":
       color = "yellow"
       break;
