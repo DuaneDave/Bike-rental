@@ -31,6 +31,7 @@ button {
   font-family: inherit;
 }
 
+select,
 input:not([type='file']) {
   border-radius: 20px;
   border: 1px solid #ccc;
@@ -41,8 +42,10 @@ input:not([type='file']) {
   letter-spacing: 1px;
   background: transparent;
   width: 100%;
+  color: var(--light-dark);
 }
 
+select,
 input:not([type='file']):focus {
   border: none;
   outline: 1px solid #05a00580;
@@ -122,6 +125,8 @@ form button {
   padding: 1.5rem 0.5rem;
   border-radius: 15px;
   justify-content: center;
+  width: 100%;
+  max-width: 400px;
 }
 
 .greeting h2 {

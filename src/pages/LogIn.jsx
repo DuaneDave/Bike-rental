@@ -1,5 +1,5 @@
 import UseChange from '../hooks/UseChange';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import Input from '../reusables/inputFields/Inputs';
 import Container from '../reusables/container/Container';
@@ -8,6 +8,8 @@ function LogIn() {
   const [username, handleUsernameChange] = UseChange('');
   const [email, handleEmailChange] = UseChange('');
   const [password, handlePasswordChange] = UseChange('');
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,9 +33,11 @@ function LogIn() {
           alert('Password is incorrect');
           return;
         } else {
-          window.location.href = '/home';
+          navigate('/home')
         }
       }
+
+      // make a post req with the mail and username to the back
     }
 
     handleUsernameChange('');

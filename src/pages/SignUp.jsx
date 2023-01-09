@@ -1,10 +1,11 @@
 import UseChange from '../hooks/UseChange';
 import UseFileUpload from '../hooks/useFileUpload';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import Input from '../reusables/inputFields/Inputs';
 import FileUpload from '../reusables/inputFields/FileUpload';
 import Container from '../reusables/container/Container';
+
 
 function SignUp() {
   const [username, handleUsernameChange] = UseChange('');
@@ -12,6 +13,8 @@ function SignUp() {
   const [password, handlePasswordChange] = UseChange('');
   const [confirmPassword, handleConfirmPasswordChange] = UseChange('');
   const { file, preview, handleFileChange } = UseFileUpload();
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
