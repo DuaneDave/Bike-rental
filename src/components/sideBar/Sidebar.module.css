@@ -36,7 +36,7 @@ nav ul li a:hover {
 }
 
 .logout {
-  margin-block: 7rem 3rem;
+  margin-block: 7rem 5.5rem;
 }
 
 .logo,
@@ -77,7 +77,7 @@ nav ul li a:hover {
 
 .socials {
   position: relative;
-  bottom: -7rem;
+  bottom: min-max(-4rem, -7rem);
   color: var(--light-dark);
 }
 
