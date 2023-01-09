@@ -43,34 +43,40 @@ function LogIn() {
 
   return (
     <Container>
-      <form onSubmit={handleSubmit} className='flex flex-column'>
-        <Input
-          label='Username'
-          type='text'
-          value={username}
-          onChange={(e) => handleUsernameChange(e)}
-        />
-        <Input
-          label='Email'
-          type='email'
-          value={email}
-          onChange={(e) => handleEmailChange(e)}
-        />
-        <Input
-          label='Password'
-          type='password'
-          value={password}
-          onChange={(e) => handlePasswordChange(e)}
-        />
-
-        <button type='submit'>Log In</button>
-        <span className='flex gap'>
-          <p>Don't have an account?</p>
-          <Link to='/signup' className='redirect'>
-            Sign Up
-          </Link>
+      <div className='form-container flex flex-column'>
+        <span className='flex flex-column center greeting'>
+          <h2>Welcome back!</h2>
+          <p>Log into your account.</p>
         </span>
-      </form>
+        <form onSubmit={handleSubmit} className='flex flex-column'>
+          <Input
+            label='Username'
+            type='text'
+            value={username}
+            onChange={(e) => handleUsernameChange(e)}
+          />
+          <Input
+            label='Email'
+            type='email'
+            value={email}
+            onChange={(e) => handleEmailChange(e)}
+          />
+          <Input
+            label='Password'
+            type='password'
+            value={password}
+            onChange={(e) => handlePasswordChange(e)}
+          />
+
+          <button type='submit'>Log In</button>
+          <span className='flex gap'>
+            <p>Don't have an account?</p>
+            <Link to='/signup' className='redirect'>
+              Sign Up
+            </Link>
+          </span>
+        </form>
+      </div>
     </Container>
   );
 }

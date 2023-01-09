@@ -1,12 +1,18 @@
 import { Link } from "react-router-dom";
-
+import { CiUser } from 'react-icons/ci'
 function Home() {
   const avatar = JSON.parse(localStorage.getItem('user'));
-  
+
   return (
     <section>
-      <span className="avatar">
-        <img src={avatar.avatar} />
+      <span className='avatar'>
+        {avatar ? (
+          <img src={avatar.avatar} />
+        ) : (
+          <span className='flex center'>
+            <CiUser />
+          </span>
+        )}
       </span>
       <div className='home-background'></div>
       <div className='content flex'>

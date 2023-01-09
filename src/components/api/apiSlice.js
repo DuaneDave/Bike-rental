@@ -2,10 +2,10 @@ import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 
 export const apiSlice = createApi({
   reducerPath: 'Bikes',
-  baseQuery: fetchBaseQuery({baseUrl:'http://localhost:4000/'}),
+  baseQuery: fetchBaseQuery({baseUrl:'https://bike-web.herokuapp.com/'}),
   endpoints: builder => ({
     getBikes: builder.query({
-      query: () => '/Bikes'
+      query: () => '/api/v1/bikes'
     })
   })
 })

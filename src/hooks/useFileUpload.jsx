@@ -7,8 +7,13 @@ function UseFileUpload() {
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
 
+    
     if (e.target.files[0]) {
-      setPreview(URL.createObjectURL(e.target.files[0]));
+      const reader = new FileReader();
+      reader.readAsDataURL(e.target.files[0]);
+      reader.onloadend = () => {
+        setPreview(reader.result);
+      };
     }
   };
 

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap');
 
 :root {
-  --light-dark:#3a3a3a;
+  --light-dark:#3a3a3a96;
 }
 
 * {
@@ -36,6 +36,7 @@ input:not([type='file']) {
   font-weight: 300;
   font-size: 0.9rem;
   letter-spacing: 1px;
+  background: transparent;
 }
 
 input:not([type='file']):focus {
@@ -46,7 +47,7 @@ input:not([type='file']):focus {
 label {
   font-size: 0.8rem;
   color: var(--light-dark);
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.3rem;
 }
 
 h1,
@@ -78,7 +79,7 @@ form span {
 form button {
   align-self: center;
   padding-inline: 5rem;
-  margin-top: 0.7rem;
+  margin-top: 1rem;
 }
 
 .grid {
@@ -110,6 +111,7 @@ form button {
   text-decoration: underline;
 }
 
+.avatar span,
 .avatar img {
   width: 30px;
   height: 30px;
@@ -119,6 +121,31 @@ form button {
   border: 2px solid #ccc;
   position: fixed;
   z-index: 20;
+  background: #ccc;
+}
+
+.form-container {
+  background: #fff;
+  backdrop-filter: blur(3rem);
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2));
+  /* height: 400px; */
+  padding: 1.5rem 0.5rem;
+  border-radius: 15px;
+  justify-content: center;
+  /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); */
+}
+
+.greeting h2 {
+  font-weight: normal;
+  color: rgba(16, 82, 16, 0.747);
+  margin-bottom: 0.3rem;
+}
+
+.greeting p {
+  color: #3a3a3ac5;
+  margin-bottom: 0.6rem;
+  font-size: 0.85rem;
+  word-spacing: 2px;
 }
 
 .home-background {

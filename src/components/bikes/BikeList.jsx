@@ -16,7 +16,7 @@ const BikeList = () => {
     <div>
       {isLoading && <Spiner />}
       {isSuccess && Bikes.map(bike => (
-      <Bike bike={bike} />
+      <Bike key={bike.id} bike={bike} />
       ))}
       {isError && error.toString()}
     </div>
