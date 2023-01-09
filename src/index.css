@@ -3,6 +3,7 @@
 :root {
   --light-dark:#3a3a3a96;
   --light: #fff;
+  --primary: #339933;
 }
 
 * {
@@ -13,6 +14,7 @@
 
 a {
   text-decoration: none;
+  color: var(--light-dark);
 }
 
 ul {
@@ -22,7 +24,7 @@ ul {
 button {
   border: none;
   cursor: pointer;
-  background: #339933;
+  background: var(--primary);
   border-radius: 30px;
   padding: 0.5rem 1rem;
   color: var(--light);
@@ -111,18 +113,6 @@ form button {
 
 .redirect:hover {
   text-decoration: underline;
-}
-
-.avatar span,
-.avatar img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  right: 2rem;
-  top: 2rem;
-  position: fixed;
-  z-index: 20;
-  background: var(--light);
 }
 
 .form-container {
