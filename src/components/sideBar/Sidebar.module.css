@@ -1,15 +1,19 @@
 header {
   position: fixed;
+  width: 100%;
   z-index: 10;
 }
 
 nav {
+  position: absolute;
+  left: 0;
+  top: 0;
   padding-top: 3rem;
   background: var(--light);
   width: 250px;
   height: 100vh;
-  align-items: center;
   transform: translateX(-250px);
+  align-items: center;
   transition: .5s ease-in-out;
 }
 

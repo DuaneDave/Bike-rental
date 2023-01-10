@@ -225,3 +225,10 @@ form button {
     gap: 1.5rem;
   }
 }
+
+.small img {
+  width: 400px;
+  height: 400px;
+  outline: 1px solid black;
+  cursor: pointer;
+}
