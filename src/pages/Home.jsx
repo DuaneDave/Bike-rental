@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Home() {
   return (
     <section>
@@ -9,7 +11,7 @@ function Home() {
         </span>
 
         <div className='home-cta flex'>
-          <button>See Bikes</button>
+          <Link to="/bikes">See Bikes</Link>
           <button>Make Reservation</button>
         </div>
       </div>
