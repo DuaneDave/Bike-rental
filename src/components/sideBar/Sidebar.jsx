@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+
 import { CiUser, CiLogout } from 'react-icons/ci';
 import { RiReservedLine } from 'react-icons/ri';
 import { AiOutlineProfile } from 'react-icons/ai';
@@ -14,6 +15,13 @@ import Socials from './Socials';
 function Sidebar() {
   const [toggled, setToggled] = useState(false);
   const avatar = JSON.parse(localStorage.getItem('user'));
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    sessionStorage('remove');
+    navigate('/');
+    window.location.reload();
+  };
 
   return (
     <header className='flex center'>
@@ -25,7 +33,10 @@ function Sidebar() {
         {toggled ? '<<' : '>>'}
       </button>
 
-      <span className={styles.avatar}>
+      <span
+        className={styles.avatar}
+        onClick={() => navigate('/my_reservations')}
+      >
         {avatar.avatar ? (
           <img src={avatar.avatar} />
         ) : (
@@ -67,14 +78,13 @@ function Sidebar() {
           </li>
         </ul>
 
-        <Link
-          to='/'
+        <span
           className={styles.logout + ' flex center gap'}
-          onClick={() => sessionStorage('remove')}
+          onClick={handleLogout}
         >
           <CiLogout />
           <p>Log out</p>
-        </Link>
+        </span>
 
         <Socials />
       </nav>
