@@ -1,14 +1,17 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { apiSlice } from "../components/api/apiSlice";
-import loginReducer from '../components/login/loginSlice'
-import bikeSlice from '../components/bikes/bikeSlice'
+import { configureStore } from '@reduxjs/toolkit';
+import { apiSlice } from '../components/api/apiSlice';
+import bikeSlice from '../components/bikes/bikeSlice';
 
-export const store = configureStore({
+import userSlice from '../components/userSlice';
+
+const store = configureStore({
   reducer: {
-    Bikes: apiSlice.reducer,
+    [apiSlice.reducerPath]: apiSlice.reducer,
     toggelDetails: bikeSlice.reducer,
-    logedin: loginReducer
-
+    users: userSlice,
   },
-  middleware: getDefaultMiddlewear => getDefaultMiddlewear().concat(apiSlice.middleware)
-})
+  middleware: (getDefaultMiddlewear) =>
+    getDefaultMiddlewear().concat(apiSlice.middleware),
+});
+
+export default store;
