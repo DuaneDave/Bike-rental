@@ -1,11 +1,11 @@
 import UseChange from '../hooks/UseChange';
 import UseFileUpload from '../hooks/useFileUpload';
 import { Link, useNavigate } from 'react-router-dom';
+import { useAddUserMutation } from '../components/api/apiSlice';
 
 import Input from '../reusables/inputFields/Inputs';
 import FileUpload from '../reusables/inputFields/FileUpload';
 import Container from '../reusables/container/Container';
-
 
 function SignUp() {
   const [username, handleUsernameChange] = UseChange('');
@@ -13,6 +13,8 @@ function SignUp() {
   const [password, handlePasswordChange] = UseChange('');
   const [confirmPassword, handleConfirmPasswordChange] = UseChange('');
   const { file, preview, handleFileChange } = UseFileUpload();
+
+  const [addUser] = useAddUserMutation();
 
   const navigate = useNavigate();
 
@@ -36,11 +38,17 @@ function SignUp() {
       return;
     } else {
       const avatar = file ? preview : null;
-      const data = { username, email, password, confirmPassword, avatar };
+      const data = { username, email, password, avatar };
       localStorage.setItem('user', JSON.stringify(data));
+
+      addUser({
+        name: username,
+        email,
+        password,
+      });
     }
 
-    window.location.href = '/';
+    navigate('/');
   };
 
   return (
