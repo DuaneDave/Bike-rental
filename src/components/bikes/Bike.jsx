@@ -7,9 +7,7 @@ import { useDeleteBikeMutation } from "../api/apiSlice";
 const Bike = ({ bike }) => {
   const navigate = useNavigate();
   const [color, setColor] = useState(null);
-  const [showdetails, setShowDetails] = useState(false);
   const changeColor = (input) => setColor(input);
-  const [deleteBike, { isLoading }] = useDeleteBikeMutation();
 
   return (
     <div>
@@ -26,7 +24,6 @@ const Bike = ({ bike }) => {
           <ColorSwitch key={color} changeColor={changeColor} input={color} />
         ))}
       </div>
-      <button onClick={(id) => deleteBike(bike.id)}>delete</button>
     </div>
   );
 };
