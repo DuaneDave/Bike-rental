@@ -1,7 +1,7 @@
 import Bike from '../components/bikes/Bike';
 import { useParams } from 'react-router-dom';
 import { useGetBikesQuery } from '../components/api/apiSlice';
-import Spiner from '../components/spiner/Spiner';
+import Spiner from '../reusables/spiner/Spinner';
 
 const Details = () => {
   const { param } = useParams();
