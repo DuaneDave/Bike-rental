@@ -1,4 +1,10 @@
 import UseChange from '../hooks/UseChange';
+import {
+  useAddNewReservationMutation,
+  useGetBikesQuery,
+} from '../components/api/apiSlice';
+
+import sessionStorage from '../helpers/sessions';
 
 import Container from '../reusables/container/Container';
 import Input, { Select } from '../reusables/inputFields/Inputs';
@@ -7,54 +13,31 @@ const now = new Date();
 const today = `${now.getFullYear()}/${now.getMonth() + 1}/${now.getDate()}`;
 const user = JSON.parse(localStorage.getItem('user'));
 
-// const url = 'https://bike-web.herokuapp.com/api/v1/reservations'
-// {
-//   user_id
-//   bike_id
-//   reservation_date
-//   due_date
-// }
-
-const data = [
-  {
-    id: 1,
-    bike_id: 1,
-    name: 'bike 1',
-    user_id: 1,
-    reservation_date: today,
-    due_date: today,
-  },
-  {
-    id: 2,
-    name: 'bike 2',
-    bike_id: 2,
-    user_id: 2,
-    reservation_date: today,
-    due_date: today,
-  },
-  {
-    id: 3,
-    name: 'bike 3',
-    bike_id: 3,
-    user_id: 3,
-    reservation_date: today,
-    due_date: today,
-  },
-];
-
 function Reservations() {
   const [reservationDate, handleReservationDateChange] = UseChange(today);
   const [dueDate, handleDueDateChange] = UseChange(today);
   const [bike, handleBikeChange] = UseChange('');
 
+  const [addNewReservation] = useAddNewReservationMutation();
+  const { data: bikes } = useGetBikesQuery();
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    const selectedBike = bikes.find(
+      (each) => each.id === Number(bike.slice(0, 1))
+    );
+
+    const userData = sessionStorage('get');
 
     const data = {
       reservation_date: reservationDate,
       due_date: dueDate,
-      bike_id: bike,
+      bike_id: selectedBike.id,
+      user_id: userData.id,
     };
+
+    addNewReservation(data);
+    // .unwrap()
   };
 
   return (
@@ -76,9 +59,11 @@ function Reservations() {
             label={'Due Date'}
             onChange={(e) => handleDueDateChange(e)}
           />
-          <Select label={'Bike'} onChange={(e) => handleBikeChange(e)}>
-            {data.map((bike) => (
-              <option key={bike.id}>{bike.name}</option>
+          <Select label={'Bike'} handleChange={(e) => handleBikeChange(e)}>
+            {bikes.map((bike) => (
+              <option key={bike.id}>
+                {bike.id}.{bike.name}
+              </option>
             ))}
           </Select>
 
