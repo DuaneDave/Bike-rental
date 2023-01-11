@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap");
 
 :root {
-  --light-dark:#3a3a3a96;
+  --light-dark: #3a3a3a96;
   --light: #fff;
   --primary: #339933;
 }
@@ -31,11 +31,11 @@ button {
   font-family: inherit;
 }
 
-input:not([type='file']) {
+input:not([type="file"]) {
   border-radius: 20px;
   border: 1px solid #ccc;
   padding: 0.2rem 1rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 0.9rem;
   letter-spacing: 1px;
@@ -43,7 +43,7 @@ input:not([type='file']) {
   width: 100%;
 }
 
-input:not([type='file']):focus {
+input:not([type="file"]):focus {
   border: none;
   outline: 1px solid #05a00580;
 }
@@ -57,13 +57,13 @@ label {
 h1,
 h2,
 h3 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 500;
   line-height: 1;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #000;
   font-weight: 300;
 }
@@ -138,7 +138,7 @@ form button {
 }
 
 .home-background {
-  background-image: url('https://trek.scene7.com/is/image/TrekBicycleProducts/Farley96_23_37020_A_Primary?$responsive-pjpg$&cache=on,on&wid=1920&hei=1440');
+  background-image: url("https://trek.scene7.com/is/image/TrekBicycleProducts/Farley96_23_37020_A_Primary?$responsive-pjpg$&cache=on,on&wid=1920&hei=1440");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -148,7 +148,7 @@ form button {
 }
 
 .home-background::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -177,7 +177,7 @@ form button {
 }
 
 .content h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: clamp(0.9rem, 2vw, 1rem);
   font-weight: 400;
   margin-top: 0.9rem;
@@ -209,6 +209,14 @@ form button {
   background: #579157fb;
   backdrop-filter: blur(1rem);
   border: none;
+}
+
+.img {
+  width: 60px;
+}
+
+.disabled {
+  opacity: 0.5;
 }
 
 @media screen and (min-width: 768px) {
