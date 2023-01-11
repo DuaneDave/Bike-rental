@@ -1,5 +1,3 @@
-
-import Brand from './brand/Brand'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { CiUser, CiLogout } from 'react-icons/ci';
@@ -17,7 +15,6 @@ function Sidebar() {
   const avatar = JSON.parse(localStorage.getItem('user'));
 
   return (
-
     <header className='flex center'>
       <button
         onClick={() => setToggled(!toggled)}
@@ -30,7 +27,7 @@ function Sidebar() {
       </button>
 
       <span className={styles.avatar}>
-        {avatar ? (
+        {avatar.avatar ? (
           <img src={avatar.avatar} />
         ) : (
           <span className='flex center'>

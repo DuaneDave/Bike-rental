@@ -1,5 +1,5 @@
 import Bike from "./Bike";
-import Spiner from "../spiner/Spiner";
+import Spiner from "../../reusables/spiner/Spinner";
 import { useGetBikesQuery } from "../api/apiSlice";
 import { Navigation } from "swiper";
 import { useNavigate } from "react-router-dom";

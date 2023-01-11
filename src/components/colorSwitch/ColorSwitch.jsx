@@ -1,32 +1,38 @@
-import { useDispatch } from "react-redux"
+import styles from "./ColorSwitch.module.css";
 
-const ColorSwitch = ({input, changeColor}) => {
+function ColorSwitch({ displayColor, changeColor }) {
   let color;
-  switch(input) {
+  switch (displayColor) {
     case "red":
-      color = "red"
+      color = "red";
       break;
     case "white":
-      color =  "white"
+      color = "white";
       break;
     case "yellow":
-      color = "yellow"
+      color = "yellow";
       break;
     case "orange":
-      color = "orange"
+      color = "orange";
       break;
     case "blue":
-      color = "blue"
+      color = "blue";
       break;
     case "green":
-      color = "green"
-    break;
+      color = "green";
+      break;
     default:
-      color = "black"
-  }  
+      color = "black";
+  }
+
+  const style = styles[color];
+
   return (
-      <button style={{backgroundColor:color}} onClick={() => changeColor(color)} >switch</button>
-  )
+      <div
+        onClick={() => changeColor(color)}
+        className={style + " colorSwitch"}
+      ></div>
+  );
 }
 
-export default ColorSwitch
+export default ColorSwitch;

@@ -1,8 +1,9 @@
-import Spiner from "../components/spiner/Spiner";
-
-const [deleteBike, { isLoading }] = useDeleteBikeMutation();
+import Spiner from "../reusables/spiner/Spinner";
+import { useGetBikesQuery } from "../components/api/apiSlice";
+import { useDeleteBikeMutation } from "../components/api/apiSlice";
 
 const Delete = () => {
+  const [deleteBike] = useDeleteBikeMutation();
   const {
     data: Bikes,
     isLoading,
@@ -21,9 +22,10 @@ const Delete = () => {
         Bikes.map((bike) => (
           <div key={bike.id}>
             <h2>{bike.name}</h2>
-            <button onClick={bike.id}></button>
+            <button onClick={() => deleteBike(bike.id)}>detele</button>
           </div>
         ))}
+      {isFetching && <Spiner />}
     </div>
   );
 };
