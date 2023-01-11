@@ -1,5 +1,5 @@
 import Bike from './Bike';
-import Spiner from '../spiner/Spiner';
+import Spiner from '../../reusables/spiner/Spinner';
 import { useGetBikesQuery } from '../api/apiSlice';
 
 const BikeList = () => {
