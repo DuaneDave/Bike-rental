@@ -6,12 +6,13 @@ import { AiOutlineProfile } from 'react-icons/ai';
 import { BiAddToQueue } from 'react-icons/bi';
 import { MdBookmarkRemove } from 'react-icons/md';
 
+import sessionStorage from '../../helpers/sessions';
+
 import styles from './Sidebar.module.css';
 import Socials from './Socials';
 
 function Sidebar() {
   const [toggled, setToggled] = useState(false);
-
   const avatar = JSON.parse(localStorage.getItem('user'));
 
   return (
@@ -19,9 +20,7 @@ function Sidebar() {
       <button
         onClick={() => setToggled(!toggled)}
         color={toggled ? 'green' : 'red'}
-        className={
-          toggled ? styles.move : styles.hamburger
-        }
+        className={toggled ? styles.move : styles.hamburger}
       >
         {toggled ? '<<' : '>>'}
       </button>
@@ -68,7 +67,11 @@ function Sidebar() {
           </li>
         </ul>
 
-        <Link to='/' className={styles.logout + ' flex center gap'}>
+        <Link
+          to='/'
+          className={styles.logout + ' flex center gap'}
+          onClick={() => sessionStorage('remove')}
+        >
           <CiLogout />
           <p>Log out</p>
         </Link>
