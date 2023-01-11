@@ -11,7 +11,12 @@ function Select({ label, handleChange, ...rest }) {
   return (
     <div className='flex flex-column'>
       <label htmlFor={label}>{label}</label>
-      <select onChange={handleChange} {...rest} />
+      <select onChange={handleChange}>
+        <option>
+          Select a bike
+        </option>
+        {rest.children}
+      </select>
     </div>
   );
 }
