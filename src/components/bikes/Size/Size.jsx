@@ -1,18 +1,17 @@
+import styles from './Size.module.css';
 
-const Size = () => {
+function Size() {
   return (
-    <div>
-      <p>Select a size</p>
-      <ul>
-        <li>S</li>
-        <li>M</li>
-        <li>L</li>
-        <li>Xl</li>
-      </ul><br/>
-      <p>Select a color</p>
-
+    <div className={styles.sizes + ' flex flex-column'}>
+      <h3>Select a size</h3>
+      <ul className='flex gap'>
+        <li className={styles.size}>S</li>
+        <li className={styles.size}>M</li>
+        <li className={styles.size}>L</li>
+        <li className={styles.size}>XL</li>
+      </ul>
     </div>
-  )
+  );
 }
 
-export default Size
+export default Size;
