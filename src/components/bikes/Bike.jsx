@@ -18,7 +18,7 @@ const Bike = ({ bike }) => {
       <div className='grid'>
         <div className={styles.detailMain}>
           <img
-            onClick={() => navigate(`/Bikes/${bike.id}`)}
+            onClick={() => navigate(`/bikes/${bike.id}`)}
             src={bike.images[color] || bike.images[Object.keys(bike.images)[0]]}
           />
           <span>{bike.description}</span>
