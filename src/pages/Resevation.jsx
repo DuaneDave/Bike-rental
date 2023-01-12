@@ -33,8 +33,9 @@ function Reservations() {
     const data = {
       reservation_date: reservationDate,
       due_date: dueDate,
-      bike_id: selectedBike.name,
+      bike_id: selectedBike.id,
       user_id: userData.id,
+      bike_name: selectedBike.name,
     };
 
     addNewReservation(data);

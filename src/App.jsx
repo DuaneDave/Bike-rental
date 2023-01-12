@@ -11,22 +11,27 @@ import "./index.css";
 import AddBike from "./pages/AddBike";
 import Delete from "./pages/Delete";
 import MyReservations from "./pages/MyReservations";
+import sessionStorage from "./helpers/sessions";
+import Error from "./pages/404Page";
 
 function App() {
+  const user = sessionStorage("get");
+
   return (
     <React.Fragment>
       <Router>
-        <Sidebar />
+        {user && <Sidebar />}
         <Routes>
           <Route path="/" element={<LogIn />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="bikes" element={<Bikes />} />
-          <Route path="bikes/:param" element={<Details />} />
-          <Route path="/reserve" element={<Reservations />} />
-          <Route path="/delete" element={<Delete />} />
-          <Route path="/reservations" element={<MyReservations />} />
-          <Route path="/add_bike" element={<AddBike />} />
+          {user && <Route path="/home" element={<Home />} />}
+          {user && <Route path="/bikes" element={<Bikes />} />}
+          {user && <Route path="/bikes/:param" element={<Details />} />}
+          {user && <Route path="/reserve" element={<Reservations />} />}
+          {user && <Route path="/delete" element={<Delete />} />}
+          {user && <Route path="/reservations" element={<MyReservations />} />}
+          {user && <Route path="/add_bike" element={<AddBike />} />}
+          {user && <Route path="*" element={<Error />} />}
         </Routes>
       </Router>
     </React.Fragment>

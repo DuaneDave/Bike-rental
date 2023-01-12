@@ -9,13 +9,14 @@ export const apiSlice = createApi({
   endpoints: (builder) => ({
     getBikes: builder.query({
       query: () => "/bikes",
-      providesTags: ["Bike"],
+      providesTags: ["Bike", "Reservation"],
     }),
     getUsers: builder.query({
       query: () => "/users",
     }),
     getReservations: builder.query({
       query: () => "/reservations",
+      providesTags: ["Reservation"],
     }),
     addBike: builder.mutation({
       query: (bike) => ({
@@ -45,6 +46,14 @@ export const apiSlice = createApi({
         method: "POST",
         body: body,
       }),
+      invalidatesTags: ["Reservation"],
+    }),
+    deleteReservation: builder.mutation({
+      query: (id) => ({
+        url: `reservations${id}`,
+        medthod: "DELETE",
+      }),
+      invalidatesTags: ["Reservation"],
     }),
   }),
 });
@@ -57,4 +66,5 @@ export const {
   useGetUsersQuery,
   useAddUserMutation,
   useAddNewReservationMutation,
+  useDeleteReservationMutation
 } = apiSlice;
