@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import UseChange from '../hooks/UseChange';
 import {
   useAddNewReservationMutation,
@@ -8,6 +9,8 @@ import sessionStorage from '../helpers/sessions';
 
 import Container from '../reusables/container/Container';
 import Input, { Select } from '../reusables/inputFields/Inputs';
+import Modal from '../reusables/notifications/modal/Modal';
+import Spiner from '../reusables/spiner/Spinner';
 
 const now = new Date();
 const today = `${now.getFullYear()}/${now.getMonth() + 1}/${now.getDate()}`;
@@ -17,8 +20,9 @@ function Reservations() {
   const [reservationDate, handleReservationDateChange] = UseChange(today);
   const [dueDate, handleDueDateChange] = UseChange(today);
   const [bike, handleBikeChange] = UseChange('');
+  const [modal, setModal] = useState({ alert: false, message: '', type: '' });
 
-  const [addNewReservation] = useAddNewReservationMutation();
+  const [addNewReservation, { isLoading }] = useAddNewReservationMutation();
   const { data: bikes } = useGetBikesQuery();
 
   const handleSubmit = (e) => {
@@ -36,41 +40,65 @@ function Reservations() {
       user_id: userData.id,
     };
 
-    addNewReservation(data);
-    // .unwrap()
+    addNewReservation(data)
+      .unwrap()
+      .then(() =>
+        setModal({
+          alert: true,
+          message: `Yay! Your reservation for ${selectedBike.name} has been added successfully`,
+          type: 'success',
+        })
+      )
+      .catch(() =>
+        setModal({
+          alert: true,
+          message: `Oops! Something went wrong with reseving ${selectedBike.name}, please try again`,
+          type: 'error',
+        })
+      );
   };
 
   return (
-    <Container>
-      <div className='form-container flex flex-column'>
-        <span className='flex flex-column center greeting'>
-          <h2>Add a new Bike Resevation</h2>
-        </span>
+    <>
+      <Container>
+        <div className='form-container flex flex-column'>
+          <span className='flex flex-column center greeting'>
+            <h2>Add a new Bike Resevation</h2>
+          </span>
 
-        <form onSubmit={handleSubmit} className='flex flex-column'>
-          <Input
-            type={'date'}
-            label={'Reservation Date'}
-            onChange={(e) => handleReservationDateChange(e)}
-            value={reservationDate}
-          />
-          <Input
-            type={'date'}
-            label={'Due Date'}
-            onChange={(e) => handleDueDateChange(e)}
-          />
-          <Select label={'Bike'} handleChange={(e) => handleBikeChange(e)}>
-            {bikes.map((bike) => (
-              <option key={bike.id}>
-                {bike.id}.{bike.name}
-              </option>
-            ))}
-          </Select>
+          <form onSubmit={handleSubmit} className='flex flex-column'>
+            <Input
+              type={'date'}
+              label={'Reservation Date'}
+              onChange={(e) => handleReservationDateChange(e)}
+              value={reservationDate}
+            />
+            <Input
+              type={'date'}
+              label={'Due Date'}
+              onChange={(e) => handleDueDateChange(e)}
+            />
+            <Select label={'Bike'} handleChange={(e) => handleBikeChange(e)}>
+              {bikes.map((bike) => (
+                <option key={bike.id}>
+                  {bike.id}.{bike.name}
+                </option>
+              ))}
+            </Select>
 
-          <button type='submit'>Submit</button>
-        </form>
-      </div>
-    </Container>
+            <button type='submit'>Submit</button>
+          </form>
+        </div>
+      </Container>
+      {modal.alert && (
+        <Modal
+          type={modal.type}
+          message={modal.message}
+          onClose={() => setModal({ alert: false, message: '', type: '' })}
+        />
+      )}
+      {isLoading && <Spiner />}
+    </>
   );
 }
 
