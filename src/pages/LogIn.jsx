@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useGetUsersQuery } from '../components/api/apiSlice';
 import UseChange from '../hooks/UseChange';
@@ -6,8 +7,10 @@ import sessionStorage from '../helpers/sessions';
 
 import Input from '../reusables/inputFields/Inputs';
 import Container from '../reusables/container/Container';
+import Modal from '../reusables/notifications/modal/Modal';
 
 function LogIn() {
+  const [modal, setModal] = useState({ isError: false, message: '', type: '' });
   const [username, handleUsernameChange] = UseChange('');
   const [email, handleEmailChange] = UseChange('');
   const [password, handlePasswordChange] = UseChange('');
@@ -19,7 +22,11 @@ function LogIn() {
     e.preventDefault();
 
     if (!username || !email || !password) {
-      alert('Please fill in all fields');
+      setModal({
+        isError: true,
+        message: 'Oops fields cannot be empty, please fill in all fields !',
+        type: 'error',
+      });
       return;
     } else {
       const user =
@@ -29,9 +36,15 @@ function LogIn() {
             user.email === email &&
             user.password === password
         ) || null;
+        console.log(users);
 
       if (!user) {
-        alert('User does not exist');
+        setModal({
+          isError: true,
+          message:
+            'User does not exist, confirm entered data or sign up a new account',
+          type: 'error',
+        });
         return;
       } else {
         sessionStorage('set', user);
@@ -79,6 +92,13 @@ function LogIn() {
           </span>
         </form>
       </div>
+      {modal.isError && (
+        <Modal
+          message={modal.message}
+          type={modal.type}
+          onClose={() => setModal({ isError: false, message: '', type: '' })}
+        />
+      )}
     </Container>
   );
 }
