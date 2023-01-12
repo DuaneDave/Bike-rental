@@ -35,7 +35,10 @@ const BikeList = () => {
         Bikes.map((bike) => (
           <SwiperSlide className={containerClassName} key={bike.id}>
             <img
-              style={{ cursor: "pointer" }}
+              style={{
+                width: "50px",
+                cursor: "pointer",
+              }}
               className="img"
               onClick={() => navigate(`/Bikes/${bike.id}`)}
               src={bike.images[Object.keys(bike.images)[0]]}

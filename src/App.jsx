@@ -26,6 +26,7 @@ function App() {
           <Route path="/reserve" element={<Reservations />} />
           <Route path="/delete" element={<Delete />} />
           <Route path="/reservations" element={<MyReservations />} />
+          <Route path="/add_bike" element={<AddBike />} />
         </Routes>
       </Router>
     </React.Fragment>

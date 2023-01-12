@@ -1,74 +1,72 @@
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
-import { CiUser, CiLogout } from 'react-icons/ci';
-import { RiReservedLine } from 'react-icons/ri';
-import { AiOutlineProfile } from 'react-icons/ai';
-import { BiAddToQueue } from 'react-icons/bi';
-import { MdBookmarkRemove } from 'react-icons/md';
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import { CiUser, CiLogout } from "react-icons/ci";
+import { RiReservedLine } from "react-icons/ri";
+import { AiOutlineProfile } from "react-icons/ai";
+import { BiAddToQueue } from "react-icons/bi";
+import { MdBookmarkRemove } from "react-icons/md";
 
-import styles from './Sidebar.module.css';
-import Socials from './Socials';
+import styles from "./Sidebar.module.css";
+import Socials from "./Socials";
 
 function Sidebar() {
   const [toggled, setToggled] = useState(false);
 
-  const avatar = JSON.parse(localStorage.getItem('user'));
+  const avatar = JSON.parse(localStorage.getItem("user")) || {};
 
   return (
-    <header className='flex center'>
+    <header className="flex center">
       <button
         onClick={() => setToggled(!toggled)}
-        color={toggled ? 'green' : 'red'}
-        className={
-          toggled ? styles.move : styles.hamburger
-        }
+        color={toggled ? "green" : "red"}
+        className={toggled ? styles.move : styles.hamburger}
       >
-        {toggled ? '<<' : '>>'}
+        {toggled ? "<<" : ">>"}
       </button>
 
       <span className={styles.avatar}>
         {avatar.avatar ? (
           <img src={avatar.avatar} />
         ) : (
-          <span className='flex center'>
+          <span className="flex center">
             <CiUser />
           </span>
         )}
       </span>
       <nav
         className={
-          toggled ? styles.toggle + ' flex flex-column' : 'flex flex-column'
+          toggled ? styles.toggle + " flex flex-column" : "flex flex-column"
         }
       >
-        <Link to='/home' className={styles.logo}>
+        <Link to="/home" className={styles.logo}>
           Trek
         </Link>
-        <ul className='flex flex-column'>
+        <ul className="flex flex-column">
           <li>
-            <Link to='/reserve' className='flex gap'>
+            <Link to="/reserve" className="flex gap">
               <RiReservedLine /> Reserve
             </Link>
           </li>
           <li>
-            <Link to='/reservations' className='flex gap'>
+            <Link to="/reservations" className="flex gap">
               <AiOutlineProfile /> My Reservations
             </Link>
           </li>
           <li>
-            <Link to='/add_bike' className='flex gap'>
+            <Link to="/add_bike" className="flex gap">
               <BiAddToQueue />
               Add a bike
             </Link>
           </li>
           <li>
-            <Link to='/delete_bike' className='flex gap'>
+            <Link to="/delete_bike" className="flex gap">
               <MdBookmarkRemove />
               Remove a bike
             </Link>
           </li>
         </ul>
 
-        <Link to='/' className={styles.logout + ' flex center gap'}>
+        <Link to="/" className={styles.logout + " flex center gap"}>
           <CiLogout />
           <p>Log out</p>
         </Link>
