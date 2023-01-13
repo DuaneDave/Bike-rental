@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const apiSlice = createApi({
   reducerPath: "Bikes",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://bike-web.herokuapp.com/api/v1",
+    baseUrl: "https://bike-rental-api.onrender.com/api/v1",
   }),
   tagTypes: ["Bike"],
   endpoints: (builder) => ({
@@ -66,5 +66,5 @@ export const {
   useGetUsersQuery,
   useAddUserMutation,
   useAddNewReservationMutation,
-  useDeleteReservationMutation
+  useDeleteReservationMutation,
 } = apiSlice;
