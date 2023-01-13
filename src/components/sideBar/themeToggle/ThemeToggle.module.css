@@ -1,0 +1,7 @@
+.theme span {
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.664);
+  background-color: #ffffffef;
+  padding: 0.2rem;
+  border-radius: 50%;
+}
