@@ -4,6 +4,10 @@ header {
   z-index: 10;
 }
 
+header button {
+  color: white;
+}
+
 nav {
   position: absolute;
   left: 0;
@@ -69,15 +73,18 @@ nav ul li a:hover {
   transform: translateX(0);
 }
 
+.avatar {
+  right: 2rem;
+  top: 2rem;
+  position: fixed;
+  z-index: 20;
+}
+
 .avatar span,
 .avatar img {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  right: 2rem;
-  top: 2rem;
-  position: fixed;
-  z-index: 20;
   background: var(--light);
   cursor: pointer;
 }
