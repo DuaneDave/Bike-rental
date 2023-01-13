@@ -28,7 +28,7 @@ function App() {
           {user && <Route path="/bikes" element={<Bikes />} />}
           {user && <Route path="/bikes/:param" element={<Details />} />}
           {user && <Route path="/reserve" element={<Reservations />} />}
-          {user && <Route path="/delete" element={<Delete />} />}
+          {user && <Route path="/delete_bike" element={<Delete />} />}
           {user && <Route path="/reservations" element={<MyReservations />} />}
           {user && <Route path="/add_bike" element={<AddBike />} />}
           {user && <Route path="*" element={<Error />} />}

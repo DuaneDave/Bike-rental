@@ -33,6 +33,7 @@ const MyReservations = () => {
               ></img>
               <p>Bike: {`${bike.name} ${bike.brand}`}</p>
               <p>Reservation date: {res.reservation_date}</p>
+              <p>City: {res.city}</p>
               {/* <button onClick={() => deleteres(bike.id)}>Delete</button> */}
             </div>
           );

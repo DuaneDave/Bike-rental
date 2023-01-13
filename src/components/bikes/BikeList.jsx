@@ -30,7 +30,6 @@ const BikeList = () => {
       onSlideChange={() => console.log("slide change")}
       onSwiper={(swiper) => console.log(swiper)}
     >
-    <>
       {isLoading && <Spiner />}
       {isSuccess &&
         Bikes.map((bike) => (
@@ -58,11 +57,7 @@ const BikeList = () => {
           </SwiperSlide>
         ))}
       {isError && error.toString()}
-<<<<<<< HEAD
     </Swiper>
-=======
-    </>
->>>>>>> 83fca8f033de99f41e9863f3a975458b76e0c713
   );
 };
 

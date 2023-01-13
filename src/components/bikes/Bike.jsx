@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import styles from "./Bike.module.css";
 
-const Bike = ({}) => {
+const Bike = ({ bike }) => {
   const [color, setColor] = useState(null);
   const changeColor = (input) => setColor(input);
 

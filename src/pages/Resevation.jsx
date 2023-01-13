@@ -21,6 +21,7 @@ function Reservations() {
   const [dueDate, handleDueDateChange] = UseChange(today);
   const [bike, handleBikeChange] = UseChange("");
   const [modal, setModal] = useState({ alert: false, message: "", type: "" });
+  const [city, handleCityChange] = UseChange("");
 
   const [addNewReservation, { isLoading }] = useAddNewReservationMutation();
   const { data: bikes } = useGetBikesQuery();
@@ -39,7 +40,7 @@ function Reservations() {
       due_date: dueDate,
       bike_id: selectedBike.id,
       user_id: userData.id,
-      bike_name: selectedBike.name,
+      city,
     };
 
     addNewReservation(data)
@@ -75,6 +76,7 @@ function Reservations() {
               onChange={(e) => handleReservationDateChange(e)}
               value={reservationDate}
             />
+
             <Input
               type={"date"}
               label={"Due Date"}
@@ -84,9 +86,16 @@ function Reservations() {
               {bikes.map((bike) => (
                 <option key={bike.id}>
                   {bike.id}.{bike.name}
+                  {bike.brand}
                 </option>
               ))}
             </Select>
+            <Input
+              type={"text"}
+              label={"City"}
+              onChange={(e) => handleCityChange(e)}
+              value={city}
+            />
 
             <button type="submit">Submit</button>
           </form>
