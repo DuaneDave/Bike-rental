@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <section>
+    <section className='white'>
       <div className='home-background'></div>
       <div className='content flex'>
         <span>
