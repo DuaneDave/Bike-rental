@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import sessionStorage from './helpers/sessions';
@@ -15,6 +15,17 @@ import './index.css';
 
 function App() {
   const user = sessionStorage('get');
+  const theme = localStorage.getItem('theme');
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.body.classList.add('dark');
+    }
+
+    if (theme === 'light') {
+      document.body.classList.remove('dark');
+    }
+  });
 
   return (
     <React.Fragment>
