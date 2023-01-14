@@ -14,7 +14,6 @@ import Spiner from "../reusables/spiner/Spinner";
 
 const now = new Date();
 const today = `${now.getFullYear()}/${now.getMonth() + 1}/${now.getDate()}`;
-const user = JSON.parse(localStorage.getItem("user"));
 
 function Reservations() {
   const [reservationDate, handleReservationDateChange] = UseChange(today);
@@ -26,7 +25,6 @@ function Reservations() {
   const [addNewReservation, { isLoading }] = useAddNewReservationMutation();
   const { data: bikes } = useGetBikesQuery();
 
-  console.log(bikes);
   const handleSubmit = (e) => {
     e.preventDefault();
     const selectedBike = bikes.find(
