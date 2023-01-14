@@ -9,8 +9,9 @@ import { MdBookmarkRemove } from 'react-icons/md';
 
 import sessionStorage from '../../helpers/sessions';
 
-import styles from "./Sidebar.module.css";
-import Socials from "./Socials";
+import styles from './Sidebar.module.css';
+import Socials from './Socials';
+import ThemeToggle from './themeToggle/ThemeToggle';
 
 function Sidebar() {
   const [toggled, setToggled] = useState(false);
@@ -33,17 +34,21 @@ function Sidebar() {
         {toggled ? "<<" : ">>"}
       </button>
 
-      <span
-        className={styles.avatar}
-        onClick={() => navigate('/my_reservations')}
-      >
+      <span className={styles.avatar + ' flex center gap'}>
         {avatar.avatar ? (
-          <img src={avatar.avatar} />
+          <img
+            src={avatar.avatar}
+            onClick={() => navigate('/my_reservations')}
+          />
         ) : (
-          <span className="flex center">
+          <span
+            className='flex center'
+            onClick={() => navigate('/my_reservations')}
+          >
             <CiUser />
           </span>
         )}
+        <ThemeToggle />
       </span>
       <nav
         className={
