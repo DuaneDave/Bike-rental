@@ -1,0 +1,44 @@
+.wrapper {
+  padding: 1rem;
+  margin-top: 4rem;
+}
+
+.cardContainer {
+  width: 100%;
+  max-width: 900px;
+}
+
+.cardContainer img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.card {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+
+.card h3 {
+  font-size: 0.9rem;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary);
+}
+
+.card span {
+  font-size: 0.8rem;
+  color: var(--light-dark);
+  margin-top: 0.3rem;
+}
+
+.card span:nth-of-type(even) {
+  background: #ccc;
+}
+
+@media screen and (min-width: 968px) {
+  .cardContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
