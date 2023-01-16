@@ -13,11 +13,14 @@ import Delete from "./pages/Delete";
 import MyReservations from "./pages/MyReservations";
 import sessionStorage from "./helpers/sessions";
 import Error from "./pages/404Page";
+import { useGetBikesQuery } from "./components/api/apiSlice";
+import Spiner from "./reusables/spiner/Spinner";
 
 function App() {
   const user = sessionStorage("get");
   const theme = localStorage.getItem("theme");
 
+  const { isLoading } = useGetBikesQuery();
   useEffect(() => {
     if (theme === "dark") {
       document.body.classList.add("dark");
@@ -31,6 +34,7 @@ function App() {
   return (
     <React.Fragment>
       <Router>
+        {isLoading && <Spiner />}
         {user && <Sidebar />}
         <Routes>
           <Route path="/" element={<LogIn />} />
