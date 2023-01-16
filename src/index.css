@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap");
 
 :root {
-  --light-dark:#3a3a3a96;
+  --light-dark: #3a3a3a96;
   --light: #fff;
   --dark: #000;
   --primary: #339933;
@@ -58,7 +58,7 @@ select {
 }
 
 select,
-input:not([type='file']) {
+input:not([type="file"]) {
   border-radius: 20px;
   border: 1px solid var(--grey);
   padding: 0.2rem 1rem;
@@ -72,7 +72,7 @@ input:not([type='file']) {
 }
 
 select,
-input:not([type='file']):focus {
+input:not([type="file"]):focus {
   border: none;
   outline: 1px solid #05a00580;
 }
@@ -92,7 +92,7 @@ h3 {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: var(--dark);
   font-weight: 300;
 }
@@ -103,7 +103,7 @@ section {
 
 section.white {
   background: white;
-  transition: .5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 form {
@@ -279,4 +279,8 @@ form button {
   width: 400px;
   height: 400px;
   cursor: pointer;
+}
+
+.nextEl {
+  color: red !important;
 }

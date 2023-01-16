@@ -1,5 +1,6 @@
 import { useState } from "react";
 import UseChange from "../hooks/UseChange";
+import { useNavigate } from "react-router-dom";
 import {
   useAddNewReservationMutation,
   useGetBikesQuery,
@@ -25,8 +26,8 @@ function Reservations() {
 
   const [addNewReservation, { isLoading }] = useAddNewReservationMutation();
   const { data: bikes } = useGetBikesQuery();
+  const navigate = useNavigate();
 
-  console.log(bikes);
   const handleSubmit = (e) => {
     e.preventDefault();
     const selectedBike = bikes.find(
@@ -45,13 +46,14 @@ function Reservations() {
 
     addNewReservation(data)
       .unwrap()
-      .then(() =>
+      .then(() => {
         setModal({
           alert: true,
           message: `Yay! Your reservation for ${selectedBike.name} has been added successfully`,
           type: "success",
-        })
-      )
+        });
+        navigate("/reservations");
+      })
       .catch(() =>
         setModal({
           alert: true,

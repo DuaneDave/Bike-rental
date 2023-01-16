@@ -22,8 +22,8 @@ const BikeList = () => {
 
   return (
     <Swiper
-      modules={Navigation}
-      navigation
+      modules={[Navigation]}
+      navigation={true}
       spaceBetween={50}
       slidesPerView={3}
       className="swiper"
