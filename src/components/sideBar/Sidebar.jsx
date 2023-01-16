@@ -1,49 +1,48 @@
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-import { CiUser, CiLogout } from 'react-icons/ci';
-import { RiReservedLine } from 'react-icons/ri';
-import { AiOutlineProfile } from 'react-icons/ai';
-import { BiAddToQueue } from 'react-icons/bi';
-import { MdBookmarkRemove } from 'react-icons/md';
+import { CiUser, CiLogout } from "react-icons/ci";
+import { RiReservedLine } from "react-icons/ri";
+import { AiOutlineProfile } from "react-icons/ai";
+import { BiAddToQueue } from "react-icons/bi";
+import { MdBookmarkRemove } from "react-icons/md";
 
-import sessionStorage from '../../helpers/sessions';
+import sessionStorage from "../../helpers/sessions";
 
-import styles from './Sidebar.module.css';
-import Socials from './Socials';
-import ThemeToggle from './themeToggle/ThemeToggle';
+import styles from "./Sidebar.module.css";
+import Socials from "./Socials";
+import ThemeToggle from "./themeToggle/ThemeToggle";
+import Button from "../../reusables/button/Button";
 
 function Sidebar() {
   const [toggled, setToggled] = useState(false);
-  const avatar = JSON.parse(localStorage.getItem('user'));
+  const avatar = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    sessionStorage('remove');
-    navigate('/');
+    sessionStorage("remove");
+    navigate("/");
     window.location.reload();
   };
 
   return (
     <header className="flex center">
-      <button
+      <Button
         onClick={() => setToggled(!toggled)}
-        color={toggled ? 'green' : 'red'}
+        text={toggled ? "<<" : ">>"}
         className={toggled ? styles.move : styles.hamburger}
-      >
-        {toggled ? "<<" : ">>"}
-      </button>
+      />
 
-      <span className={styles.avatar + ' flex center gap'}>
+      <span className={styles.avatar + " flex center gap"}>
         {avatar.avatar ? (
           <img
             src={avatar.avatar}
-            onClick={() => navigate('/my_reservations')}
+            onClick={() => navigate("/my_reservations")}
           />
         ) : (
           <span
-            className='flex center'
-            onClick={() => navigate('/my_reservations')}
+            className="flex center"
+            onClick={() => navigate("/my_reservations")}
           >
             <CiUser />
           </span>
@@ -84,7 +83,7 @@ function Sidebar() {
         </ul>
 
         <span
-          className={styles.logout + ' flex center gap'}
+          className={styles.logout + " flex center gap"}
           onClick={handleLogout}
         >
           <CiLogout />
