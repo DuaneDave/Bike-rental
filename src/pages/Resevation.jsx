@@ -14,8 +14,7 @@ import Modal from "../reusables/notifications/modal/Modal";
 import Spiner from "../reusables/spiner/Spinner";
 
 const now = new Date();
-const today = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
-const user = JSON.parse(localStorage.getItem("user"));
+const today = `${now.getFullYear()}/${now.getMonth() + 1}/${now.getDate()}`;
 
 function Reservations() {
   const locationn = useLocation();
