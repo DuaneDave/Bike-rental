@@ -49,7 +49,7 @@ const Delete = () => {
               <button
                 onClick={() => handelBikeDelete(bike.id, bike.name, bike.brand)}
               >
-                detele
+                Detele
               </button>
             </div>
           ))}

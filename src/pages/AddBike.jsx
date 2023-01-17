@@ -6,34 +6,36 @@ import UseFileUpload from "../hooks/useFileUpload";
 import { useAddBikeMutation } from "../components/api/apiSlice";
 
 const AddBike = () => {
-  const [type, handleTypeChange] = UseChange("");
+  const [name, handleNameChange] = UseChange("");
   const [model, handleModelChange] = UseChange("");
   const [description, handleDescriptionChange] = UseChange("");
   const [price, handlePriceChange] = UseChange("");
+  const [sgingleColor, handleColorChange] = UseChange("");
   const { file, preview, handleFileChange } = UseFileUpload();
   const [addBike, { isLoading }] = useAddBikeMutation();
 
   const canSave =
-    [file, type, model, price, description].every(Boolean) && !isLoading;
-
+    [file, name, model, price, description].every(Boolean) && !isLoading;
+  const data = {
+    images: {
+      [sgingleColor]: file,
+    },
+    color: [sgingleColor],
+    name: model,
+    brand: model,
+    bike_type: "Mountain",
+    description,
+    daily_rate: price,
+    user_id: 1,
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    console.log(data);
     if (canSave) {
       try {
-        await addBike({
-          images: {
-            file,
-          },
-          color: ["red", "yellow"],
-          name: model,
-          bike_type: type,
-          description,
-          brand: "gjgf",
-          daily_rate: price,
-        }).unwrap();
+        await addBike(data).unwrap();
 
-        handleTypeChange("");
+        handleNameChange("");
         handleModelChange("");
         handleDescriptionChange("");
         handlePriceChange("");
@@ -54,10 +56,10 @@ const AddBike = () => {
           handleFileChange={(input) => handleFileChange(input)}
         />
         <Input
-          label="Bike Type"
+          label="Bike Name"
           type="text"
-          value={type}
-          onChange={(input) => handleTypeChange(input)}
+          value={name}
+          onChange={(input) => handleNameChange(input)}
         />
         <Input
           label="Bike Model"
@@ -70,6 +72,13 @@ const AddBike = () => {
           type="text"
           value={description}
           onChange={(input) => handleDescriptionChange(input)}
+        />
+
+        <Input
+          label="Bike Color"
+          type="text"
+          value={sgingleColor}
+          onChange={(input) => handleColorChange(input)}
         />
         <Input
           label="Bike Price"

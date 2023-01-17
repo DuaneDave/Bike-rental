@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import styles from "./Bike.module.css";
 import Button from "../../reusables/button/Button";
 
-const Bike = ({ bike }) => {
+function Bike({ bike }) {
   const [color, setColor] = useState(null);
   const changeColor = (input) => setColor(input);
 
@@ -62,6 +62,6 @@ const Bike = ({ bike }) => {
       </div>
     </section>
   );
-};
+}
 
 export default Bike;

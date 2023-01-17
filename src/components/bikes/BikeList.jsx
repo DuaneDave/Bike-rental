@@ -9,7 +9,7 @@ import "swiper/css";
 import styles from "./BikeList.module.css";
 import Button from "../../reusables/button/Button";
 
-const BikeList = () => {
+function BikeList() {
   const {
     data: Bikes,
     isLoading,
@@ -67,6 +67,6 @@ const BikeList = () => {
       {isError && error.toString()}
     </Swiper>
   );
-};
+}
 
 export default BikeList;
