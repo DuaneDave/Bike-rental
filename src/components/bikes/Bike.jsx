@@ -1,9 +1,10 @@
 import ColorSwitch from "../colorSwitch/ColorSwitch";
 import { useState } from "react";
 import Size from "./Size/Size";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import styles from "./Bike.module.css";
+import Button from "../../reusables/button/Button";
 
 const Bike = ({ bike }) => {
   const [color, setColor] = useState(null);
@@ -23,7 +24,9 @@ const Bike = ({ bike }) => {
         </div>
         <div className={styles.detailSide + " flex flex-column"}>
           <h2>
-            <strong>{bike.name}</strong>
+            <strong>
+              {bike.name} {bike.brand}
+            </strong>
           </h2>
           <div>
             <span className="flex gap">
@@ -52,9 +55,11 @@ const Bike = ({ bike }) => {
               />
             ))}
           </div>
+          <Link to="/reserve" state={{ id: bike.id }}>
+            Reserve
+          </Link>
         </div>
       </div>
-      <button>reserve</button>
     </section>
   );
 };

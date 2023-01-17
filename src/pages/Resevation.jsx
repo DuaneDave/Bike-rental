@@ -1,6 +1,6 @@
 import { useState } from "react";
 import UseChange from "../hooks/UseChange";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
   useAddNewReservationMutation,
   useGetBikesQuery,
@@ -14,13 +14,14 @@ import Modal from "../reusables/notifications/modal/Modal";
 import Spiner from "../reusables/spiner/Spinner";
 
 const now = new Date();
-const today = `${now.getFullYear()}/${now.getMonth() + 1}/${now.getDate()}`;
+const today = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
 const user = JSON.parse(localStorage.getItem("user"));
 
 function Reservations() {
+  const locationn = useLocation();
   const [reservationDate, handleReservationDateChange] = UseChange(today);
   const [dueDate, handleDueDateChange] = UseChange(today);
-  const [bike, handleBikeChange] = UseChange("");
+  const [bike, handleBikeChange] = UseChange(location || "");
   const [modal, setModal] = useState({ alert: false, message: "", type: "" });
   const [city, handleCityChange] = UseChange("");
 
@@ -39,7 +40,7 @@ function Reservations() {
     const data = {
       reservation_date: reservationDate,
       due_date: dueDate,
-      bike_id: selectedBike.id,
+      bike_id: bike.id,
       user_id: userData.id,
       city,
     };

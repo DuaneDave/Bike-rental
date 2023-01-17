@@ -43,9 +43,11 @@
 }
 
 .detailSide h3 {
-  font-size: .8rem;
-  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  font-family: "Poppins", sans-serif;
   margin-top: 1rem;
   word-spacing: 2px;
   color: var(--detail-heading);
 }
+
+
