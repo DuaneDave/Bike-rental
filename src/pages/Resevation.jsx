@@ -14,7 +14,7 @@ import Modal from "../reusables/notifications/modal/Modal";
 import Spiner from "../reusables/spiner/Spinner";
 
 const now = new Date();
-const today = `${now.getFullYear()}/${now.getMonth() + 1}/${now.getDate()}`;
+const today = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
 
 function Reservations() {
   const locationn = useLocation();
@@ -39,7 +39,7 @@ function Reservations() {
     const data = {
       reservation_date: reservationDate,
       due_date: dueDate,
-      bike_id: bike.id,
+      bike_id: selectedBike.id,
       user_id: userData.id,
       city,
     };

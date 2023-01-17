@@ -281,7 +281,31 @@ form button {
   cursor: pointer;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  color: red !important;
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* new styles added */
+.swiper-button {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  cursor: pointer;
+}
+.swiper-button svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.image-swiper-button-prev {
+  left: 5px;
+}
+.image-swiper-button-next {
+  right: 5px;
+}
+.swiper-button-disabled {
+  opacity: 0.5;
 }

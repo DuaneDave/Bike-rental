@@ -23,8 +23,7 @@ const AddBike = () => {
       try {
         await addBike({
           images: {
-            red: "rere",
-            yellow: "rere",
+            file,
           },
           color: ["red", "yellow"],
           name: model,
