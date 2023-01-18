@@ -1,0 +1,62 @@
+.red {
+  background: red;
+}
+
+.blue {
+  color: blue;
+}
+
+.green {
+  background: green;
+}
+
+.yellow {
+  background: yellow;
+}
+
+.white {
+  background: white;
+}
+
+.orange {
+  background: orange;
+}
+
+.black {
+  background: black;
+}
+
+.black:hover {
+  border: 1px solid white;
+}
+.orange:hover {
+  border: 1px solid white;
+}
+.white:hover {
+  border: 1px solid white;
+}
+.yellow:hover {
+  border: 1px solid white;
+}
+.green:hover {
+  border: 1px solid white;
+}
+.bleu:hover {
+  border: 1px solid white;
+}
+.red:hover {
+  border: 1px solid white;
+}
+.red,
+.green,
+.yellow,
+.white,
+.orange,
+.black {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  margin-top: 1rem;
+  box-shadow: 0 0 5px 0 #00000080;
+  cursor: pointer;
+}

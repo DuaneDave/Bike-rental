@@ -1,0 +1,145 @@
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+header button {
+  color: white;
+}
+
+nav {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 3rem;
+  background: var(--light);
+  width: 200px;
+  height: 100vh;
+  transform: translateX(-200px);
+  align-items: center;
+  transition: 0.5s ease-in-out;
+}
+
+nav ul {
+  gap: 1.5rem;
+}
+
+.logout:hover,
+.socials span svg:hover,
+nav ul li a:hover {
+  color: var(--primary);
+}
+
+.toggle {
+  transform: translateX(0);
+}
+
+.logo {
+  font-size: 2rem;
+  font-family: "Open Sans", sans-serif;
+  font-style: italic;
+  margin-bottom: 7rem;
+  font-weight: 700;
+}
+
+.logout {
+  margin-block: 7rem 5.5rem;
+  color: var(--light-dark);
+  cursor: pointer;
+}
+
+.logo,
+.logout {
+  position: relative;
+  left: -1.5rem;
+}
+
+.move,
+.hamburger {
+  position: fixed;
+  top: 2rem;
+  left: 200px;
+  z-index: 20;
+  border-radius: 0 30px 30px 0;
+  height: 35px;
+  width: 50px;
+  padding: 0;
+  transform: translateX(-200px);
+  transition: 0.5s ease-in-out;
+}
+
+.move {
+  transform: translateX(0);
+}
+
+.avatar {
+  right: 1.5rem;
+  top: 2rem;
+  position: fixed;
+  z-index: 20;
+}
+
+.avatar span,
+.avatar img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--light);
+  cursor: pointer;
+}
+
+.socials {
+  position: relative;
+  bottom: min-max(-4rem, -7rem);
+  color: var(--light-dark);
+  font-size: 0.9rem;
+}
+
+.socials span svg:hover {
+  color: var(--primary);
+}
+
+@media screen and (min-width: 948px) {
+  nav {
+    width: 270px;
+    transform: translateX(-270px);
+  }
+
+  .move,
+  .hamburger {
+    left: 270px;
+    transform: translate(-270px);
+  }
+
+  .move {
+    transform: translateX(0);
+  }
+
+  .avatar span,
+  .avatar img {
+    right: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  nav {
+    width: 300px;
+    transform: translateX(-300px);
+  }
+
+  .move,
+  .hamburger {
+    left: 300px;
+    transform: translate(-300px);
+  }
+
+  .move {
+    transform: translateX(0);
+  }
+
+  .avatar span,
+  .avatar img {
+    right: 5rem;
+  }
+}
