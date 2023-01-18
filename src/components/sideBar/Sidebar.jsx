@@ -35,14 +35,11 @@ function Sidebar() {
 
       <span className={styles.avatar + " flex center gap"}>
         {avatar.avatar ? (
-          <img
-            src={avatar.avatar}
-            onClick={() => navigate("/my_reservations")}
-          />
+          <img src={avatar.avatar} onClick={() => navigate("/reservations")} />
         ) : (
           <span
             className="flex center"
-            onClick={() => navigate("/my_reservations")}
+            onClick={() => navigate("/reservations")}
           >
             <CiUser />
           </span>

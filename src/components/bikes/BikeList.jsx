@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import styles from "./BikeList.module.css";
 import Button from "../../reusables/button/Button";
+import truncateString from "../../helpers/truncateString";
 
 function BikeList() {
   const {
@@ -32,36 +33,27 @@ function BikeList() {
       spaceBetween={50}
       slidesPerView={3}
       className="swiper"
-      onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
     >
       <div className="swiper-button image-swiper-button-next">
-        <FaArrowCircleRight color="green" />
+        <FaArrowCircleRight size="90px" color="green" />
       </div>
       <div className="swiper-button image-swiper-button-prev">
-        <FaArrowCircleLeft color="green" />
+        <FaArrowCircleLeft size="5em" color="green" />
       </div>
       {isLoading && <Spiner />}
       {isSuccess &&
         Bikes.map((bike) => (
-          <SwiperSlide className={containerClassName} key={bike.id}>
-            <img
-              onClick={() => navigate(`/Bikes/${bike.id}`)}
-              src={bike.images[Object.keys(bike.images)[0]]}
-            ></img>
+          <SwiperSlide
+            style={{ cursor: "pointer" }}
+            onClick={() => navigate(`/Bikes/${bike.id}`)}
+            className={containerClassName}
+            key={bike.id}
+          >
+            <img src={bike.images[Object.keys(bike.images)[0]]}></img>
             <h3>
               {bike.name} {bike.brand}
             </h3>
-            <p>
-              {" "}
-              {bike.description.substring(1, 100)}
-              <span
-                style={{ cursor: "pointer" }}
-                onClick={() => navigate(`/Bikes/${bike.id}`)}
-              >
-                ...
-              </span>
-            </p>
+            <p> {truncateString(0, 100, bike.description)}</p>
           </SwiperSlide>
         ))}
       {isError && error.toString()}

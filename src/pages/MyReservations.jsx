@@ -15,6 +15,8 @@ const MyReservations = () => {
     isSuccess,
     isFetching,
   } = useGetReservationsQuery();
+
+  console.log(reservations);
   return (
     <>
       <h1>My Reservations</h1>

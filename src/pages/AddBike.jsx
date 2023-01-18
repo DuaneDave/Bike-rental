@@ -4,6 +4,7 @@ import Input from "../reusables/inputFields/Inputs";
 import FileUpload from "../reusables/inputFields/FileUpload";
 import UseFileUpload from "../hooks/useFileUpload";
 import { useAddBikeMutation } from "../components/api/apiSlice";
+import { useNavigate } from "react-router-dom";
 
 const AddBike = () => {
   const [name, handleNameChange] = UseChange("");
@@ -13,15 +14,15 @@ const AddBike = () => {
   const [sgingleColor, handleColorChange] = UseChange("");
   const { file, preview, handleFileChange } = UseFileUpload();
   const [addBike, { isLoading }] = useAddBikeMutation();
-
+  const navigate = useNavigate();
   const canSave =
     [file, name, model, price, description].every(Boolean) && !isLoading;
   const data = {
     images: {
-      [sgingleColor]: file,
+      [sgingleColor]: preview,
     },
     color: [sgingleColor],
-    name: model,
+    name: name,
     brand: model,
     bike_type: "Mountain",
     description,
@@ -34,12 +35,7 @@ const AddBike = () => {
     if (canSave) {
       try {
         await addBike(data).unwrap();
-
-        handleNameChange("");
-        handleModelChange("");
-        handleDescriptionChange("");
-        handlePriceChange("");
-        handleFileChange("");
+        navigate("/bikes");
       } catch (err) {
         console.log("Failed to save the bike:", err);
       }

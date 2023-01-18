@@ -31,9 +31,9 @@ function Reservations() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const selectedBike = bikes.find(
-      (each) => each.id === Number(bike.slice(0, 1))
+      (each) => each.id === Number(bike.split(".")[0])
     );
-
+    console.log(bikes);
     const userData = sessionStorage("get");
 
     const data = {

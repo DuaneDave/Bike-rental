@@ -70,4 +70,3 @@ export const {
   useAddNewReservationMutation,
   useDeleteReservationMutation,
 } = apiSlice;
-
