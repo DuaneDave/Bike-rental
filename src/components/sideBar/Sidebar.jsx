@@ -16,7 +16,7 @@ import Button from "../../reusables/button/Button";
 
 function Sidebar() {
   const [toggled, setToggled] = useState(false);
-  const avatar = JSON.parse(localStorage.getItem("user"));
+  const avatar = JSON.parse(localStorage.getItem("user")) || {};
   const navigate = useNavigate();
 
   const handleLogout = () => {
