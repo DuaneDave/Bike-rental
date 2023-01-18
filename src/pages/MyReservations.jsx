@@ -17,7 +17,6 @@ const MyReservations = () => {
   } = useGetReservationsQuery();
   return (
     <>
-      <h1>My Reservations</h1>
       {isLoading && <Spiner />}
       {isSuccess && success && (
         <ReservationCard reservations={reservations} bikes={bikes} />
