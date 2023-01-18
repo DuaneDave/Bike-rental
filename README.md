@@ -19,6 +19,9 @@ REQUIRED SECTIONS:
 - Acknowledgements
 - License
 
+OPTIONAL SECTIONS:
+- FAQ
+
 After you're finished please remove all the comments and instructions!
 -->
 
@@ -27,7 +30,7 @@ After you're finished please remove all the comments and instructions!
   <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
   <br/>
 
-  <h3><b>Microverse README Template</b></h3>
+  <h3><b>TREK BIKE RENTAL</b></h3>
 
 </div>
 
@@ -52,35 +55,32 @@ After you're finished please remove all the comments and instructions!
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ](#faq)
+- [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 Trek Bike Rental <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
-
-**[Rails blog_app]** is a...
+**Trek Bike Rental** is a rental web app designed to allow users rent a bike from Trek rental company.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> A Blog app will be a classic example of a blog website. User will be able create a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
-
+> [React-Redux](https://guides.rubyonrails.org/) (React Redux is the official React UI bindings layer for Redux. It lets your React components read data from a Redux store, and dispatch actions to the store to update state.
 
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
+    <li><a href="https://react-redux.js.org/">React-Redux</a></li>
   </ul>
 </details>
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
+    <li><a href="https://guides.rubyonrails.org/">Ruby on Rails</a></li>
   </ul>
 </details>
 
@@ -91,19 +91,31 @@ After you're finished please remove all the comments and instructions!
   </ul>
 </details>
 
+<!-- Features -->
 
+### Key Features <a name="key-features"></a>
 
-
+- **Add_bike**
+- **Delete_bike**
+- **Fetch/get_bike**
+- **Authenticate_user**
+- **Reserve_bike**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## API-Documentain
+
+- [Link To Documentation](https://bike-rental-api.onrender.com/api-docs/index.html)
 
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> coming soon.
+- [Live Demo Link](https://bike-rental-api.onrender.com/api/v1/bikes)
 
-- [Live Demo Link](https://yourdeployedapplicationlink.com)
+## Back-end Repository
+
+[Backend Repo](https://github.com/DuaneDave/Bike-rental-api)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -111,134 +123,151 @@ After you're finished please remove all the comments and instructions!
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> To get a local copy up and running, follow these steps.
+To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
 In order to run this project you need:
 
-rails instaled on your machine :
-
-```sh
- gem install rails
-```
-and any kind of code editors(VScode for example ) :
-
-```sh
-sudo i code 
-```
-
+- [Node.js](https://nodejs.dev/en/) installed
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-
-Example commands:
-
 ```sh
   cd my-folder
-  git clone git@github.com:myaccount/my-project.git
+  git clone https://github.com/DuaneDave/Bike-rental.git
 ```
-
 
 ### Install
 
-Install all the gems in the Gemfile:
-
+Install this project with:
 
 ```sh
-  cd my-project
-  bundle install 
+  cd Bike-rental
+
+  npm install
 ```
---->
 
 ### Usage
 
 To run the project, execute the following command:
 
-
 ```sh
-  rails server
+  npm run dev
 ```
-
 
 ### Run tests
 
 To run tests, run the following command:
 
-
-
 ```sh
-  rspec ./spec/system
+  npm run test or npm test
 ```
 
+### Deployment
 
+[Coming soon ...](https://)
+
+<!--
+Example:
+
+```sh
+
+```
+ -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
 
-## 👥 Authors <a name="Anas Chaabane"></a>
+## 👥 Authors <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
+👤 **Ernest Anyewe Adonu**
 
-👤 **Author1**
+- GitHub: [@principlebrothers](https://github.com/principlebrothers)
+- Twitter: [@adonu_ernest](https://twitter.com/adonu_ernest)
+- LinkedIn: [Ernest Anyewe Adonu](www.linkedin.com/in/ernest-anyewe-adonu)
+
+
+👤 **Haamid Ali**
+
+- GitHub: [@Haadiiii](https://github.com/Haadiiii)
+- Twitter: [@HaaDiii_99](https://twitter.com/HaaDiii_99)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/hamid-ali-01a872213/)
+
+
+👤 **Obiebi David**
+
+- GitHub: [@githubhandle](https://github.com/DuaneDave)
+- Twitter: [@twitterhandle](https://twitter.com/dave_duane)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/david-obiebi)
+
+
+👤 **Anas Chabaane**
 
 - GitHub: [@githubhandle](https://github.com/ChaabaneAnas/)
-- Twitter: [@twitterhandle](https://twitter.com/chaabaneanas)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/AnasChabaane)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- Twitter: [@twitterhandle](https://twitter.com/AnasChabaane)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/chaabaneanas/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- FUTURE FEATURES -->
 
+## 🔭 Future Features <a name="future-features"></a>
+
+- **Update_Reservation**
+- **Update_Bike**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
 
-## 🤝 Contributing <a name="Contribute here"></a>
+## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/ChaabaneAnas/blog_app/issues).
+Feel free to check the [issues page](https://github.com/DuaneDave/Bike-rental/issues/new)).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- SUPPORT -->
 
-## ⭐️ Show your support <a name="Support <3"></a>
+## ⭐️ Show your support <a name="support"></a>
 
-> don't forget to start the project if u like it
-
-If you like this project...
+If you like this project, kindly give as a ⭐️
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGEMENTS -->
 
-## 🙏 Acknowledgments <a name="Microverse"></a>
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank Microverse for making all of this possible
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+- We would like to thank [Microverse](https://www.microverse.org/) for inspiring this project
+- A special appreciation to [Murat Korkmaz](https://www.behance.net/muratk) who design on [Behance](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign) inspired this project
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- FAQ (optional) -->
+
+## ❓ FAQ (OPTIONAL) <a name="faq"></a>
+
+- **Why did you choose react?**
+
+  - [The biggest advantage of using it is that you can change any component at any point in time without affecting the other components. This alone results in widespread support among both clients and service providers.](https://blog.nextstacks.com/reasons-to-choose-react/#:~:text=Advantages%20of%20React%20over%20other%20frameworks%201%20Code,to%20Learn%20...%206%20Better%20Development%20Experience%20)
+
+- **What is redux?**
+
+  - [Redux is simply a store to store the state of the variables in your app.](https://medium.com/swlh/what-is-redux-b16b42b33820)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
