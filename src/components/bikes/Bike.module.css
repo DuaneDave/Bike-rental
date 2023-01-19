@@ -76,7 +76,7 @@
 }
 
 .res {
-  color: green;
+  color: var(--primary);
 }
 
 @media screen and (min-width: 768px) {
