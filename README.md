@@ -42,7 +42,10 @@ After you're finished please remove all the comments and instructions!
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+    - [API Documentation](#api-documentation)
   - [🚀 Live Demo](#live-demo)
+    - [Back-end Repository](#back-end-repository)
+    - [Kanban Board](#kanban-board)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -103,7 +106,7 @@ After you're finished please remove all the comments and instructions!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## API-Documentain
+## API-Documentation <a name="api-documentation"></a>
 
 - [Link To Documentation](https://bike-rental-api.onrender.com/api-docs/index.html)
 
@@ -113,14 +116,15 @@ After you're finished please remove all the comments and instructions!
 
 - [Live Demo Link](https://bike-rental-api.onrender.com/api/v1/bikes)
 
-## Back-end Repository
+## Back-end Repository <a name="backend-repo"></a>
 
   [Backend Repo](https://github.com/DuaneDave/Bike-rental-api)
 
-## Kanban Board
+## Kanban Board <a name="kanban-board"></a>
+
   [Initial Kanbam Board link](https://user-images.githubusercontent.com/99597333/210737236-a5ccadaa-cae1-428d-af5d-70577c1b3620.png)
 
-The collaborators to this project  are :+1:
+The collaborators to this project  are;
 
 - [@DuaneDave](https://github.com/DuaneDave)
 - [@Haadiiii](https://github.com/Haadiiii)
