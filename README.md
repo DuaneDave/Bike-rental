@@ -115,7 +115,17 @@ After you're finished please remove all the comments and instructions!
 
 ## Back-end Repository
 
-[Backend Repo](https://github.com/DuaneDave/Bike-rental-api)
+  [Backend Repo](https://github.com/DuaneDave/Bike-rental-api)
+
+## Kanban Board
+  [Initial Kanbam Board link](https://user-images.githubusercontent.com/99597333/210737236-a5ccadaa-cae1-428d-af5d-70577c1b3620.png)
+
+The collaborators to this project  are :+1:
+
+- [@DuaneDave](https://github.com/DuaneDave)
+- [@Haadiiii](https://github.com/Haadiiii)
+- [@ChaabaneAnas](https://github.com/ChaabaneAnas/)
+- [@principlebrothers](https://github.com/principlebrothers)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
