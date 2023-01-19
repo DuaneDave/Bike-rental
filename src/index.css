@@ -303,8 +303,13 @@ form button {
 }
 
 .swiper-button svg {
-  width: 1.5rem;
-  height: 1.5rem;
+  font-size: 2rem;
+  color: #0d940d46;
+}
+
+.swiper-button svg:hover,
+.swiper-button svg:active {
+  color: #0d940d;
 }
 
 .image-swiper-button-prev {
