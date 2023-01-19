@@ -24,6 +24,8 @@ function BikeList() {
   const navigate = useNavigate();
   const containerClassName = classnames("container", { disabled: isFetching });
 
+  const clientSize = window.innerWidth < 768 ? 1 : 3;
+
   return (
     <div className={styles.sliderContainer + " flex center"}>
       <Swiper
@@ -33,39 +35,39 @@ function BikeList() {
           prevEl: ".image-swiper-button-prev",
           disabledClass: "swiper-button-disabled",
         }}
-        spaceBetween={50}
-        slidesPerView={3}
-        className={styles.cry}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
+        spaceBetween={20}
+        slidesPerView={clientSize}
       >
         <div className="swiper-button image-swiper-button-next">
-          <FaArrowCircleRight color="green" />
+          <FaArrowCircleRight  />
         </div>
         <div className="swiper-button image-swiper-button-prev">
-          <FaArrowCircleLeft color="green" />
+          <FaArrowCircleLeft  />
         </div>
         {isLoading && <Spiner />}
         {isSuccess &&
           Bikes.map((bike) => (
             <SwiperSlide className={styles.sliderItem} key={bike.id}>
-              <img
-                onClick={() => navigate(`/Bikes/${bike.id}`)}
-                src={bike.images[Object.keys(bike.images)[0]]}
-              />
-              <h3>
-                {bike.name} {bike.brand}
-              </h3>
-              <p>
-                {" "}
-                {bike.description.substring(1, 100)}
-                <span
-                  style={{ cursor: "pointer" }}
+              <span className="flex flex-column center gap">
+                <img
                   onClick={() => navigate(`/Bikes/${bike.id}`)}
-                >
-                  ...
+                  src={bike.images[Object.keys(bike.images)[0]]}
+                />
+                <span className={ styles.swiperDetails + " flex flex-column center"}>
+                  <h3>
+                    {bike.name} {bike.brand}
+                  </h3>
+                  <p>
+                    {bike.description.substring(1, 100)}
+                    <span
+                      style={{ cursor: 'pointer' }}
+                      onClick={() => navigate(`/Bikes/${bike.id}`)}
+                    >
+                      ...
+                    </span>
+                  </p>
                 </span>
-              </p>
+              </span>
             </SwiperSlide>
           ))}
         {isError && error.toString()}
