@@ -92,10 +92,8 @@ nav ul li a:hover {
 .socials {
   position: relative;
   /* stylelint-disable */
-
   bottom: min-max(-4rem, -7rem);
   /* stylelint-enable */
-
   color: var(--light-dark);
 }
 
