@@ -9,7 +9,7 @@ import Details from "./pages/Details";
 import Reservations from "./pages/Resevation";
 import "./index.css";
 import AddBike from "./pages/AddBike";
-import Delete from "./pages/Delete";
+import DeleteBike from "./pages/DeleteBike";
 import MyReservations from "./pages/MyReservations";
 import sessionStorage from "./helpers/sessions";
 import Error from "./pages/404Page";
