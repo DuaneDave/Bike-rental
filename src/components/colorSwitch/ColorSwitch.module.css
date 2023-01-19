@@ -1,0 +1,39 @@
+.red {
+  background: red;
+}
+
+.blue {
+  color: blue;
+}
+
+.green {
+  background: green;
+}
+
+.yellow {
+  background: yellow;
+}
+
+.white {
+  background: white;
+}
+
+.orange {
+  background: orange;
+}
+
+.black {
+  background: black;
+}
+
+.red,
+.green,
+.yellow,
+.white,
+.orange,
+.black {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  margin-top: 1rem;
+}

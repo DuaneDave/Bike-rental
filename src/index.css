@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap");
 
 :root {
-  --light-dark:#3a3a3a96;
+  --light-dark: #3a3a3a96;
+  --light: #fff;
+  --primary: #393;
 }
 
 * {
@@ -12,6 +14,7 @@
 
 a {
   text-decoration: none;
+  color: var(--light-dark);
 }
 
 ul {
@@ -21,27 +24,31 @@ ul {
 button {
   border: none;
   cursor: pointer;
-  padding: 0.6rem 2rem;
-  background: rgb(51, 153, 51);
+  background: var(--primary);
   border-radius: 30px;
-  color: white;
+  padding: 0.5rem 1rem;
+  color: var(--light);
   font-family: inherit;
 }
 
-input:not([type='file']) {
+select,
+input:not([type="file"]) {
   border-radius: 20px;
   border: 1px solid #ccc;
   padding: 0.2rem 1rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 0.9rem;
   letter-spacing: 1px;
   background: transparent;
+  width: 100%;
+  color: var(--light-dark);
 }
 
-input:not([type='file']):focus {
+select,
+input:not([type="file"]):focus {
   border: none;
-  outline: 1px solid rgba(5, 160, 5, 0.5);
+  outline: 1px solid #05a00580;
 }
 
 label {
@@ -53,13 +60,13 @@ label {
 h1,
 h2,
 h3 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 500;
   line-height: 1;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #000;
   font-weight: 300;
 }
@@ -111,33 +118,20 @@ form button {
   text-decoration: underline;
 }
 
-.avatar span,
-.avatar img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  right: 2rem;
-  top: 2rem;
-  border: 2px solid #ccc;
-  position: fixed;
-  z-index: 20;
-  background: #ccc;
-}
-
 .form-container {
-  background: #fff;
+  background: var(--light);
   backdrop-filter: blur(3rem);
-  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2));
-  /* height: 400px; */
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
   padding: 1.5rem 0.5rem;
   border-radius: 15px;
   justify-content: center;
-  /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); */
+  width: 100%;
+  max-width: 400px;
 }
 
 .greeting h2 {
   font-weight: normal;
-  color: rgba(16, 82, 16, 0.747);
+  color: #105210be;
   margin-bottom: 0.3rem;
 }
 
@@ -149,53 +143,102 @@ form button {
 }
 
 .home-background {
-  background-image: url('https://trek.scene7.com/is/image/TrekBicycleProducts/Farley96_23_37020_A_Primary?$responsive-pjpg$&cache=on,on&wid=1920&hei=1440');
+  background-image: url("https://trek.scene7.com/is/image/TrekBicycleProducts/Farley96_23_37020_A_Primary?$responsive-pjpg$&cache=on,on&wid=1920&hei=1440");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
   height: 100vh;
   position: relative;
-  filter: blur(1px);
 }
 
 .home-background::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.623), rgba(0, 0, 0, 0.363));
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .content {
+  width: 100%;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.5rem;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: #fff;
+  color: var(--light);
+  padding: 1rem;
 }
 
 .content h1 {
+  /* stylelint-disable */
   font-size: clamp(4rem, 4vw, 5rem);
+  /* stylelint-enable */
+
   font-weight: 700;
+  font-style: italic;
 }
 
 .content h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+  /* stylelint-disable */
+
   font-size: clamp(0.9rem, 2vw, 1rem);
+  /* stylelint-enable */
+
   font-weight: 400;
-  margin-top: 0.5rem;
-  color: rgb(245, 245, 245);
+  margin-top: 0.9rem;
+  color: #ffffffd5;
   word-spacing: 2px;
+  /* stylelint-disable */
+
+  font-size: 0.875rem;
+
+  /* stylelint-enable */
 }
 
 .home-cta {
-  gap: 2rem;
+  gap: 1rem;
   justify-content: center;
   align-items: center;
+}
+
+.home-cta button {
+  background: #339933c4;
+  transition: 0.3s ease;
+  box-shadow: 0 0 16px #0000004d;
+  backdrop-filter: blur(1rem);
+  color: #f5f5f5;
+  padding: 0.5rem 1rem;
+}
+
+.home-cta button:first-of-type {
+  padding-inline: 2.5rem;
+}
+
+.home-cta button:hover {
+  background: #579157fb;
+  backdrop-filter: blur(1rem);
+  border: none;
+}
+
+@media screen and (min-width: 768px) {
+  .content {
+    gap: 3rem;
+  }
+
+  .home-cta {
+    gap: 1.5rem;
+  }
+}
+
+.small img {
+  width: 400px;
+  height: 400px;
+  cursor: pointer;
 }

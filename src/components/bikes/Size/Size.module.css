@@ -1,0 +1,16 @@
+.sizes {
+  gap: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.sizes h3 {
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.size {
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  font-size: 0.7rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}

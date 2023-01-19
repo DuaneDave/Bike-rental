@@ -1,0 +1,51 @@
+.detailsContainer {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.detailsContainer > div {
+  grid-template-columns: 1fr 0.8fr;
+  padding: 0 1rem;
+  gap: 2rem;
+  max-width: 1040px;
+}
+
+.detailMain img {
+  width: 100%;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.detailMain span {
+  font-size: 0.9rem;
+}
+
+.detailSide {
+  justify-content: center;
+}
+
+.detailSide h2 {
+  font-size: 1rem;
+}
+
+.detailSide > div {
+  margin-bottom: 1rem;
+}
+
+.detailSide > div span {
+  justify-content: space-between;
+  font-size: 0.87rem;
+  padding: 0.3rem;
+}
+
+.detailSide > div span:nth-of-type(even) {
+  background: rgb(236, 236, 236);
+}
+
+.detailSide h3 {
+  font-size: 0.8rem;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 1rem;
+  word-spacing: 2px;
+  color: rgba(0, 0, 0, 0.8);
+}

@@ -1,5 +1,9 @@
+import { useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { useGetUsersQuery } from '../components/api/apiSlice';
 import UseChange from '../hooks/UseChange';
-import { Link } from 'react-router-dom';
+
+import sessionStorage from '../helpers/sessions';
 
 import Input from '../reusables/inputFields/Inputs';
 import Container from '../reusables/container/Container';
@@ -9,6 +13,9 @@ function LogIn() {
   const [email, handleEmailChange] = UseChange('');
   const [password, handlePasswordChange] = UseChange('');
 
+  const navigate = useNavigate();
+  const { data: users } = useGetUsersQuery();
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -16,29 +23,22 @@ function LogIn() {
       alert('Please fill in all fields');
       return;
     } else {
-      const data = JSON.parse(localStorage.getItem('user'));
-      if (!data) {
+      const user =
+        users.find(
+          (user) =>
+            user.name === username &&
+            user.email === email &&
+            user.password === password
+        ) || null;
+
+      if (!user) {
         alert('User does not exist');
         return;
       } else {
-        if (data.username !== username) {
-          alert('Username does not exist');
-          return;
-        } else if (data.email !== email) {
-          alert('Email does not exist');
-          return;
-        } else if (data.password !== password) {
-          alert('Password is incorrect');
-          return;
-        } else {
-          window.location.href = '/home';
-        }
+        sessionStorage('set', user);
+        navigate('/home');
       }
     }
-
-    handleUsernameChange('');
-    handleEmailChange('');
-    handlePasswordChange('');
   };
 
   return (
