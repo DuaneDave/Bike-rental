@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import LogIn from "./pages/LogIn";
 import Sidebar from "./components/sideBar/Sidebar";
 import SignUp from "./pages/SignUp";
@@ -46,7 +46,7 @@ function App() {
           {user && <Route path="/delete_bike" element={<DeleteBike />} />}
           {user && <Route path="/reservations" element={<MyReservations />} />}
           {user && <Route path="/add_bike" element={<AddBike />} />}
-          {user && <Route path="*" element={<Error />} />}
+          {user && <Route path="*" element={<Navigate to='/' />} />}
         </Routes>
       </Router>
     </React.Fragment>
