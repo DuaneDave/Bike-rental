@@ -14,6 +14,7 @@ export const apiSlice = createApi({
     getUsers: builder.query({
       query: () => '/users',
       providesTags: ['User'],
+
     }),
     getReservations: builder.query({
       query: () => '/reservations',

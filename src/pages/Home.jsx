@@ -5,6 +5,9 @@ function Home() {
     <section className='white'>
       <div className='home-background'></div>
       <div className='content flex'>
+    <section>
+      <div className="home-background"></div>
+      <div className="content flex">
         <span>
           <h1>Trek</h1>
           <h2>find your next adventure starting from here</h2>

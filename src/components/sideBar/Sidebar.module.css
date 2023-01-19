@@ -38,7 +38,11 @@ nav ul {
 }
 
 .logout {
+  /* stylelint-disable */
+
   margin-block: 7rem 5.5rem;
+  /* stylelint-enable */
+
   color: var(--light-dark);
   cursor: pointer;
 }
@@ -95,7 +99,6 @@ nav ul li a:hover {
   /* stylelint-disable */
   bottom: min-max(-4rem, -7rem);
   /* stylelint-enable */
-
   color: var(--light-dark);
   font-size: 0.9rem;
 }
