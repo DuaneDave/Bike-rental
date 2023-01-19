@@ -46,7 +46,7 @@ function App() {
           {user && <Route path="/delete_bike" element={<DeleteBike />} />}
           {user && <Route path="/reservations" element={<MyReservations />} />}
           {user && <Route path="/add_bike" element={<AddBike />} />}
-          {user && <Route path="*" element={<Navigate to='/' />} />}
+          {user && <Route path="*" element={<Navigate to='/home' />} />}
         </Routes>
       </Router>
     </React.Fragment>
