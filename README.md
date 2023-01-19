@@ -27,10 +27,10 @@ After you're finished please remove all the comments and instructions!
 
 <div align="center">
   <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
+  <img src="trek.png" alt="logo" width="140"  height="auto" />
   <br/>
 
-  <h3><b>TREK BIKE RENTAL</b></h3>
+  <h3><b>TREK BIKE RENTALS</b></h3>
 
 </div>
 
