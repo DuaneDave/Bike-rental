@@ -31,9 +31,9 @@ function Reservations() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const selectedBike = bikes.find(
-      (each) => each.id === Number(bike.split(".")[0])
+      (each) => each.id === Number(bike.split(".")[0] || location.state.id)
     );
-    console.log(bikes);
+
     const userData = sessionStorage("get");
 
     const data = {
@@ -89,7 +89,7 @@ function Reservations() {
               handleChange={(e) => handleBikeChange(e)}
               payload={location.state}
             >
-              {bikes.map((bike) => (
+              {bikes?.map((bike) => (
                 <option key={bike.id}>
                   {bike.id}.{bike.name}
                   {bike.brand}
