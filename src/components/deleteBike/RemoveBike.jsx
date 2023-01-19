@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import Modal from '../../reusables/notifications/modal/Modal';
 
+import styles from './RemoveBike.module.css';
+
 function RemoveBike({ data, onRequest }) {
   const [showModal, setShowModal] = useState({
     alert: false,
@@ -29,12 +31,12 @@ function RemoveBike({ data, onRequest }) {
 
   return (
     <>
-      <div className="flex flex-column center">
-        <div>
+      <div className={styles.deleteBikeContainer + " flex flex-column center"}>
+        <div className='grid gap'>
           {data.map((bike) => (
             <div key={bike.id}>
               <img src={bike.images[Object.keys(bike.images)[0]]}></img>
-              <div>
+              <div className={styles.actions + ' flex'}>
                 <h2>
                   {bike.name}
                   {bike.brand}
