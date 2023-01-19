@@ -33,17 +33,18 @@ function Sidebar() {
         {toggled ? "<<" : ">>"}
       </button>
 
-      <span
-        className={styles.avatar}
-        onClick={() => navigate('/my_reservations')}
-      >
+      <span className={styles.avatar + ' flex center gap'}>
         {avatar.avatar ? (
-          <img src={avatar.avatar} />
+          <img
+            src={avatar.avatar}
+            onClick={() => navigate('/my_reservations')}
+          />
         ) : (
           <span className="flex center">
             <CiUser />
           </span>
         )}
+        <ThemeToggle />
       </span>
       <nav
         className={
