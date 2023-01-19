@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap');
 
 :root {
-<<<<<<< HEAD
-  --light-dark:#3a3a3a96;
+  --light-dark: #3a3a3a96;
   --light: #fff;
   --dark: #000;
-  --primary: #339933;
+  --primary: #393;
   --body: white;
   --grey-back: rgb(236, 236, 236);
   --detail-dark: rgba(0, 0, 0, 0.8);
@@ -38,12 +37,15 @@ body.dark {
 a {
   text-decoration: none;
   color: var(--light-dark);
-=======
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family:
+    inter,
+    avenir,
+    helvetica,
+    arial,
+    sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -52,15 +54,8 @@ a {
   -webkit-text-size-adjust: 100%;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-
 a:hover {
   color: #535bf2;
->>>>>>> 7ffebb4af07fa13bcfa0dbb5867bd90b6a384309
 }
 
 ul {
@@ -70,7 +65,6 @@ ul {
 button {
   border: none;
   cursor: pointer;
-<<<<<<< HEAD
   background: var(--primary);
   border-radius: 30px;
   padding: 0.5rem 1rem;
@@ -128,7 +122,7 @@ section {
 
 section.white {
   background: white;
-  transition: .5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 form {
@@ -192,7 +186,7 @@ form button {
 .form-container {
   background: var(--light);
   backdrop-filter: blur(3rem);
-  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
   padding: 1.5rem 0.5rem;
   border-radius: 15px;
   justify-content: center;
@@ -247,7 +241,11 @@ form button {
 }
 
 .content h1 {
+  /* stylelint-disable */
+
   font-size: clamp(4rem, 4vw, 5rem);
+  /* stylelint-enable */
+
   font-weight: 700;
   font-style: italic;
   color: white;
@@ -255,12 +253,15 @@ form button {
 
 .content h2 {
   font-family: 'Poppins', sans-serif;
+  /* stylelint-disable */
+
   font-size: clamp(0.9rem, 2vw, 1rem);
+  /* stylelint-enable */
+
   font-weight: 400;
   margin-top: 0.9rem;
   color: #ffffffd5;
   word-spacing: 2px;
-  font-size: 0.875rem;
 }
 
 .home-cta {
@@ -297,37 +298,37 @@ form button {
 
   .home-cta {
     gap: 1.5rem;
-=======
-  transition: border-color 0.25s;
-}
-
-button:hover {
-  border-color: #646cff;
-}
-
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #fff;
+    transition: border-color 0.25s;
   }
 
-  a:hover {
-    color: #747bff;
+  button:hover {
+    border-color: #646cff;
   }
 
-  button {
-    background-color: #f9f9f9;
->>>>>>> 7ffebb4af07fa13bcfa0dbb5867bd90b6a384309
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
   }
-}
 
-.small img {
-  width: 400px;
-  height: 400px;
-  cursor: pointer;
+  @media (prefers-color-scheme: light) {
+    :root {
+      color: #213547;
+      background-color: #fff;
+    }
+
+    a:hover {
+      color: #747bff;
+    }
+
+    button {
+      background-color: #f9f9f9;
+      >>>>>>>7ffebb4af07fa13bcfa0dbb5867bd90b6a384309
+    }
+  }
+
+  .small img {
+    width: 400px;
+    height: 400px;
+    cursor: pointer;
+  }
 }
