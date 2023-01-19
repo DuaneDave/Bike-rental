@@ -75,6 +75,10 @@
   border: 2px solid var(--primary);
 }
 
+.res {
+  color: green;
+}
+
 @media screen and (min-width: 768px) {
   .detailsContainer > div {
     grid-template-columns: 1fr 0.8fr;
