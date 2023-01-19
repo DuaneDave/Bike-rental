@@ -1,6 +1,14 @@
 {
   "presets": [
-      "@babel/preset-react"
-  ],
-  "plugins": ["@babel/plugin-syntax-jsx"]
+    [
+      "@babel/preset-env",
+      {
+        "modules": "commonjs",
+        "targets": {
+          "node": "current"
+        }
+      }
+    ],
+    "@babel/preset-react"
+  ]
 }

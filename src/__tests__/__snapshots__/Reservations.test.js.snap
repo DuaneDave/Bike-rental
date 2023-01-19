@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reservations if reservations mocked automatically 1`] = `
+<section
+  className="ReservationCard__wrapper flex flex-column center"
+>
+  <div
+    className="ReservationCard__cardContainer grid gap"
+  >
+    <div
+      className="ReservationCard__card flex flex-column gap"
+    >
+      <div
+        className="ReservationCard__cardDetails flex flex-column"
+      >
+        <h3
+          className="flex"
+        >
+          Bike Name:
+          <span>
+            Bike
+            Brand
+          </span>
+        </h3>
+        <span>
+          Reservation date:
+          <span>
+            2021-01-01
+          </span>
+        </span>
+        <span>
+          Due date:
+          <span>
+            2021-01-02
+          </span>
+        </span>
+        <span>
+          City of reservation:
+          <span>
+            Toronto
+          </span>
+        </span>
+      </div>
+      <span />
+    </div>
+    <div
+      className="ReservationCard__card flex flex-column gap"
+    >
+      <div
+        className="ReservationCard__cardDetails flex flex-column"
+      >
+        <h3
+          className="flex"
+        >
+          Bike Name:
+          <span>
+            Bike
+            Brand
+          </span>
+        </h3>
+        <span>
+          Reservation date:
+          <span>
+            2021-01-01
+          </span>
+        </span>
+        <span>
+          Due date:
+          <span>
+            2021-01-02
+          </span>
+        </span>
+        <span>
+          City of reservation:
+          <span>
+            Toronto
+          </span>
+        </span>
+      </div>
+      <span />
+    </div>
+  </div>
+</section>
+`;
