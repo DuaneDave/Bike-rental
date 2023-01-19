@@ -55,7 +55,10 @@ function Bike({ bike }) {
               />
             ))}
           </div>
-          <Link to="/reserve" state={{ id: bike.id }}>
+          <Link
+            to="/reserve"
+            state={{ id: bike.id, name: bike.name, brand: bike.brand }}
+          >
             Reserve
           </Link>
         </div>

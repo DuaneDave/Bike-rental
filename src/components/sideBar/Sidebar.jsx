@@ -57,7 +57,7 @@ function Sidebar() {
         <ul className="flex flex-column">
           <li>
             <Link to="/reserve" className="flex gap">
-              <RiReservedLine /> Reserve
+              <RiReservedLine /> Make a Reservation
             </Link>
           </li>
           <li>

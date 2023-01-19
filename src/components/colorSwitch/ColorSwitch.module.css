@@ -26,6 +26,13 @@
   background: black;
 }
 
+.grey {
+  background: grey;
+}
+
+.grey:hover {
+  border: 1px solid white;
+}
 .black:hover {
   border: 1px solid white;
 }
@@ -41,18 +48,21 @@
 .green:hover {
   border: 1px solid white;
 }
-.bleu:hover {
+.blue:hover {
   border: 1px solid white;
 }
 .red:hover {
   border: 1px solid white;
 }
+
+.blue,
 .red,
 .green,
 .yellow,
 .white,
 .orange,
-.black {
+.black,
+.grey {
   height: 35px;
   width: 35px;
   border-radius: 50%;

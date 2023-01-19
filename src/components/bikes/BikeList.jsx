@@ -39,10 +39,10 @@ function BikeList() {
         slidesPerView={clientSize}
       >
         <div className="swiper-button image-swiper-button-next">
-          <FaArrowCircleRight  />
+          <FaArrowCircleRight />
         </div>
         <div className="swiper-button image-swiper-button-prev">
-          <FaArrowCircleLeft  />
+          <FaArrowCircleLeft />
         </div>
         {isLoading && <Spiner />}
         {isSuccess &&
@@ -50,17 +50,20 @@ function BikeList() {
             <SwiperSlide className={styles.sliderItem} key={bike.id}>
               <span className="flex flex-column center gap">
                 <img
-                  onClick={() => navigate(`/Bikes/${bike.id}`)}
                   src={bike.images[Object.keys(bike.images)[0]]}
+                  onClick={() => navigate(`/Bikes/${bike.id}`)}
+                  style={{ cursor: "pointer" }}
                 />
-                <span className={ styles.swiperDetails + " flex flex-column center"}>
+                <span
+                  className={styles.swiperDetails + " flex flex-column center"}
+                >
                   <h3>
                     {bike.name} {bike.brand}
                   </h3>
                   <p>
                     {bike.description.substring(1, 100)}
                     <span
-                      style={{ cursor: 'pointer' }}
+                      style={{ cursor: "pointer" }}
                       onClick={() => navigate(`/Bikes/${bike.id}`)}
                     >
                       ...

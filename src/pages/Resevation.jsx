@@ -17,10 +17,10 @@ const now = new Date();
 const today = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
 
 function Reservations() {
-  const locationn = useLocation();
+  const location = useLocation();
   const [reservationDate, handleReservationDateChange] = UseChange(today);
   const [dueDate, handleDueDateChange] = UseChange(today);
-  const [bike, handleBikeChange] = UseChange(location || "");
+  const [bike, handleBikeChange] = UseChange("");
   const [modal, setModal] = useState({ alert: false, message: "", type: "" });
   const [city, handleCityChange] = UseChange("");
 
@@ -33,8 +33,6 @@ function Reservations() {
     const selectedBike = bikes.find(
       (each) => each.id === Number(bike.split(".")[0])
     );
-    console.log(bikes);
-    const userData = sessionStorage("get");
 
     const data = {
       reservation_date: reservationDate,
@@ -84,7 +82,11 @@ function Reservations() {
               label={"Due Date"}
               onChange={(e) => handleDueDateChange(e)}
             />
-            <Select label={"Bike"} handleChange={(e) => handleBikeChange(e)}>
+            <Select
+              label={"Bike"}
+              handleChange={(e) => handleBikeChange(e)}
+              payload={location.state}
+            >
               {bikes.map((bike) => (
                 <option key={bike.id}>
                   {bike.id}.{bike.name}
