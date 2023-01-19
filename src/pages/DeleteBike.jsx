@@ -1,10 +1,10 @@
-import { useGetBikesQuery } from '../components/api/apiSlice';
-import { useDeleteBikeMutation } from '../components/api/apiSlice';
-import { useState } from 'react';
+import { useGetBikesQuery } from "../components/api/apiSlice";
+import { useDeleteBikeMutation } from "../components/api/apiSlice";
+import { useState } from "react";
 
-import Spiner from '../reusables/spiner/Spinner';
+import Spiner from "../reusables/spiner/Spinner";
 
-import RemoveBike from '../components/deleteBike/RemoveBike';
+import RemoveBike from "../components/deletebike/RemoveBike";
 
 const DeleteBike = () => {
   const [deleteBike] = useDeleteBikeMutation();
