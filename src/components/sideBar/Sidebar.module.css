@@ -14,17 +14,11 @@ nav {
   height: 100vh;
   transform: translateX(-250px);
   align-items: center;
-  transition: .5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 nav ul {
   gap: 1.5rem;
-}
-
-.logout:hover,
-.socials span svg:hover,
-nav ul li a:hover {
-  color: var(--primary);
 }
 
 .toggle {
@@ -33,7 +27,7 @@ nav ul li a:hover {
 
 .logo {
   font-size: 2rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-style: italic;
   margin-bottom: 7rem;
   font-weight: 700;
@@ -49,6 +43,12 @@ nav ul li a:hover {
   left: -1.5rem;
 }
 
+.logout:hover,
+.socials span svg:hover,
+nav ul li a:hover {
+  color: var(--primary);
+}
+
 .move,
 .hamburger {
   position: fixed;
@@ -60,7 +60,7 @@ nav ul li a:hover {
   width: 50px;
   padding: 0;
   transform: translateX(-200px);
-  transition: .5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .move {
@@ -81,7 +81,9 @@ nav ul li a:hover {
 
 .socials {
   position: relative;
+  /* stylelint-disable */
   bottom: min-max(-4rem, -7rem);
+  /* stylelint-enable */
   color: var(--light-dark);
 }
 

@@ -6,6 +6,7 @@ function sessionStorage(type, data = {}) {
   } else if (type === 'remove') {
     window.sessionStorage.removeItem('user');
   }
+  return 'no user found';
 }
 
 export default sessionStorage;

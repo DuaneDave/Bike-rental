@@ -16,14 +16,14 @@ export const apiSlice = createApi({
       query: (body) => ({
         url: '/users',
         method: 'POST',
-        body: body,
+        body,
       }),
     }),
     addNewReservation: builder.mutation({
       query: (body) => ({
         url: '/reservations',
         method: 'POST',
-        body: body,
+        body,
       }),
     }),
   }),
