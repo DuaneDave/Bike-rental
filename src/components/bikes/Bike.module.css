@@ -4,8 +4,7 @@
 }
 
 .detailsContainer > div {
-  grid-template-columns: 1fr 0.8fr;
-  padding: 0 1rem;
+  padding: 5rem 1rem 0 1rem;
   gap: 2rem;
   max-width: 1040px;
 }
@@ -74,4 +73,11 @@
   height: 200px;
   object-fit: cover;
   border: 2px solid var(--primary);
+}
+
+@media screen and (min-width: 768px) {
+  .detailsContainer > div {
+    grid-template-columns: 1fr 0.8fr;
+    padding: 0 1rem;
+  }
 }
