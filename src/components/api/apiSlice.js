@@ -1,61 +1,61 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const apiSlice = createApi({
-  reducerPath: "Bikes",
+  reducerPath: 'Bikes',
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://bike-rental-api.onrender.com/api/v1",
+    baseUrl: 'https://bike-rental-api.onrender.com/api/v1',
   }),
-  tagTypes: ["Bike, Reservation,User"],
+  tagTypes: ['Bike, Reservation,User'],
   endpoints: (builder) => ({
     getBikes: builder.query({
-      query: () => "/bikes",
-      providesTags: ["Bike"],
+      query: () => '/bikes',
+      providesTags: ['Bike'],
     }),
     getUsers: builder.query({
-      query: () => "/users",
-      providesTags: ["User"],
+      query: () => '/users',
+      providesTags: ['User'],
     }),
     getReservations: builder.query({
-      query: () => "/reservations",
-      providesTags: ["Reservation"],
+      query: () => '/reservations',
+      providesTags: ['Reservation'],
     }),
     addBike: builder.mutation({
       query: (bike) => ({
-        url: "/bikes",
-        method: "POST",
+        url: '/bikes',
+        method: 'POST',
         body: bike,
       }),
-      invalidatesTags: ["Bike"],
+      invalidatesTags: ['Bike'],
     }),
     deleteBike: builder.mutation({
       query: (id) => ({
         url: `/bikes/${id}`,
-        method: "DELETE",
+        method: 'DELETE',
       }),
-      invalidatesTags: ["Bike"],
+      invalidatesTags: ['Bike'],
     }),
     addUser: builder.mutation({
       query: (body) => ({
-        url: "/users",
-        method: "POST",
-        body: body,
+        url: '/users',
+        method: 'POST',
+        body,
       }),
-      invalidatesTags: ["User"],
+      invalidatesTags: ['User'],
     }),
     addNewReservation: builder.mutation({
       query: (body) => ({
-        url: "/reservations",
-        method: "POST",
-        body: body,
+        url: '/reservations',
+        method: 'POST',
+        body,
       }),
-      invalidatesTags: ["Reservation"],
+      invalidatesTags: ['Reservation'],
     }),
     deleteReservation: builder.mutation({
       query: (id) => ({
         url: `reservations${id}`,
-        medthod: "DELETE",
+        medthod: 'DELETE',
       }),
-      invalidatesTags: ["Reservation"],
+      invalidatesTags: ['Reservation'],
     }),
   }),
 });
