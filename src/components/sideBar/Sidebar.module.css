@@ -25,12 +25,6 @@ nav ul {
   gap: 1.5rem;
 }
 
-.logout:hover,
-.socials span svg:hover,
-nav ul li a:hover {
-  color: var(--primary);
-}
-
 .toggle {
   transform: translateX(0);
 }
@@ -53,6 +47,12 @@ nav ul li a:hover {
 .logout {
   position: relative;
   left: -1.5rem;
+}
+
+.logout:hover,
+.socials span svg:hover,
+nav ul li a:hover {
+  color: var(--primary);
 }
 
 .move,
@@ -92,7 +92,10 @@ nav ul li a:hover {
 
 .socials {
   position: relative;
+  /* stylelint-disable */
   bottom: min-max(-4rem, -7rem);
+  /* stylelint-enable */
+
   color: var(--light-dark);
   font-size: 0.9rem;
 }

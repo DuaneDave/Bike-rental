@@ -30,31 +30,6 @@
   background: grey;
 }
 
-.black:hover {
-  border: 1px solid white;
-}
-.orange:hover {
-  border: 1px solid white;
-}
-.white:hover {
-  border: 1px solid white;
-}
-.yellow:hover {
-  border: 1px solid white;
-}
-.green:hover {
-  border: 1px solid white;
-}
-.blue:hover {
-  border: 1px solid white;
-}
-.red:hover {
-  border: 1px solid white;
-}
-
-.grey:hover {
-  border: 1px solid white;
-}
 .red,
 .green,
 .yellow,
@@ -69,4 +44,36 @@
   margin-top: 1rem;
   box-shadow: 0 0 5px 0 #00000080;
   cursor: pointer;
+}
+
+.black:hover {
+  border: 1px solid white;
+}
+
+.orange:hover {
+  border: 1px solid white;
+}
+
+.white:hover {
+  border: 1px solid white;
+}
+
+.yellow:hover {
+  border: 1px solid white;
+}
+
+.green:hover {
+  border: 1px solid white;
+}
+
+.blue:hover {
+  border: 1px solid white;
+}
+
+.red:hover {
+  border: 1px solid white;
+}
+
+.grey:hover {
+  border: 1px solid white;
 }

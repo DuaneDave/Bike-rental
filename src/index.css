@@ -4,7 +4,7 @@
   --light-dark: #3a3a3a96;
   --light: #fff;
   --dark: #000;
-  --primary: #339933;
+  --primary: #393;
   --body: white;
   --grey-back: rgb(236, 236, 236);
   --detail-dark: rgba(0, 0, 0, 0.8);
@@ -177,7 +177,7 @@ form button {
 .form-container {
   background: var(--light);
   backdrop-filter: blur(3rem);
-  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
   padding: 1.5rem 0.5rem;
   border-radius: 15px;
   justify-content: center;
@@ -232,7 +232,9 @@ form button {
 }
 
 .content h1 {
+  /* stylelint-disable */
   font-size: clamp(4rem, 4vw, 5rem);
+  /* stylelint-enable */
   font-weight: 700;
   font-style: italic;
   color: white;
@@ -240,12 +242,13 @@ form button {
 
 .content h2 {
   font-family: "Poppins", sans-serif;
+  /* stylelint-disable */
   font-size: clamp(0.9rem, 2vw, 1rem);
+  /* stylelint-enable */
   font-weight: 400;
   margin-top: 0.9rem;
   color: #ffffffd5;
   word-spacing: 2px;
-  font-size: 0.875rem;
 }
 
 .home-cta {
@@ -298,16 +301,20 @@ form button {
   z-index: 10;
   cursor: pointer;
 }
+
 .swiper-button svg {
   width: 1.5rem;
   height: 1.5rem;
 }
+
 .image-swiper-button-prev {
   left: 5px;
 }
+
 .image-swiper-button-next {
   right: 5px;
 }
+
 .swiper-button-disabled {
   opacity: 0.5;
 }
