@@ -5,14 +5,16 @@ export const apiSlice = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://bike-rental-api.onrender.com/api/v1',
   }),
-  tagTypes: ['Bike'],
+  tagTypes: ['Bike, Reservation,User'],
   endpoints: (builder) => ({
     getBikes: builder.query({
       query: () => '/bikes',
-      providesTags: ['Bike', 'Reservation'],
+      providesTags: ['Bike'],
     }),
     getUsers: builder.query({
       query: () => '/users',
+      providesTags: ['User'],
+
     }),
     getReservations: builder.query({
       query: () => '/reservations',
@@ -39,6 +41,7 @@ export const apiSlice = createApi({
         method: 'POST',
         body,
       }),
+      invalidatesTags: ['User'],
     }),
     addNewReservation: builder.mutation({
       query: (body) => ({

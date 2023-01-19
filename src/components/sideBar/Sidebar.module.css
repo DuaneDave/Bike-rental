@@ -14,9 +14,9 @@ nav {
   top: 0;
   padding-top: 3rem;
   background: var(--light);
-  width: 250px;
+  width: 200px;
   height: 100vh;
-  transform: translateX(-250px);
+  transform: translateX(-200px);
   align-items: center;
   transition: 0.5s ease-in-out;
 }
@@ -63,7 +63,7 @@ nav ul li a:hover {
 .hamburger {
   position: fixed;
   top: 2rem;
-  left: 250px;
+  left: 200px;
   z-index: 20;
   border-radius: 0 30px 30px 0;
   height: 35px;
@@ -71,6 +71,7 @@ nav ul li a:hover {
   padding: 0;
   transform: translateX(-200px);
   transition: 0.5s ease-in-out;
+  cursor: pointer;
 }
 
 .move {
@@ -78,7 +79,7 @@ nav ul li a:hover {
 }
 
 .avatar {
-  right: 2rem;
+  right: 1.5rem;
   top: 2rem;
   position: fixed;
   z-index: 20;
@@ -99,6 +100,7 @@ nav ul li a:hover {
   bottom: min-max(-4rem, -7rem);
   /* stylelint-enable */
   color: var(--light-dark);
+  font-size: 0.9rem;
 }
 
 .socials span svg:hover {

@@ -21,6 +21,9 @@ function ColorSwitch({ displayColor, changeColor }) {
     case "green":
       color = "green";
       break;
+    case "grey":
+      color = "grey";
+      break;
     default:
       color = "black";
   }
@@ -28,10 +31,10 @@ function ColorSwitch({ displayColor, changeColor }) {
   const style = styles[color];
 
   return (
-      <div
-        onClick={() => changeColor(color)}
-        className={style + " colorSwitch"}
-      ></div>
+    <div
+      onClick={() => changeColor(color)}
+      className={style + " colorSwitch"}
+    ></div>
   );
 }
 

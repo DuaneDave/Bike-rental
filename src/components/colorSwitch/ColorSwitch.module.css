@@ -26,11 +26,17 @@
   background: black;
 }
 
+.grey {
+  background: grey;
+}
+
 .red,
 .green,
 .yellow,
 .white,
 .orange,
+.grey,
+.blue,
 .black {
   height: 35px;
   width: 35px;
@@ -60,10 +66,14 @@
   border: 1px solid white;
 }
 
-.bleu:hover {
+.blue:hover {
   border: 1px solid white;
 }
 
 .red:hover {
+  border: 1px solid white;
+}
+
+.grey:hover {
   border: 1px solid white;
 }

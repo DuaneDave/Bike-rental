@@ -1,6 +1,7 @@
 .wrapper {
-  padding: 1rem;
-  margin-top: 4rem;
+  padding: 4rem 1rem 1rem 1rem;
+  width: 100%;
+  min-height: 100vh;
 }
 
 .cardContainer {
@@ -15,7 +16,6 @@
 
 .card {
   padding: 1rem;
-  border: 1px solid #ccc;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 }
@@ -25,16 +25,18 @@
   align-items: center;
   gap: 0.5rem;
   color: var(--primary);
+  padding: 0.2rem 0.5rem;
 }
 
 .card span {
   font-size: 0.8rem;
   color: var(--light-dark);
   margin-top: 0.3rem;
+  padding: 0.2rem 0.5rem;
 }
 
 .card span:nth-of-type(even) {
-  background: #ccc;
+  background: var(--grey);
 }
 
 @media screen and (min-width: 968px) {

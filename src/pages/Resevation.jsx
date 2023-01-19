@@ -1,5 +1,6 @@
 import { useState } from "react";
 import UseChange from "../hooks/UseChange";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
   useAddNewReservationMutation,
   useGetBikesQuery,
@@ -13,9 +14,10 @@ import Modal from "../reusables/notifications/modal/Modal";
 import Spiner from "../reusables/spiner/Spinner";
 
 const now = new Date();
-const today = `${now.getFullYear()}/${now.getMonth() + 1}/${now.getDate()}`;
+const today = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
 
 function Reservations() {
+  const location = useLocation();
   const [reservationDate, handleReservationDateChange] = UseChange(today);
   const [dueDate, handleDueDateChange] = UseChange(today);
   const [bike, handleBikeChange] = UseChange("");
@@ -24,13 +26,14 @@ function Reservations() {
 
   const [addNewReservation, { isLoading }] = useAddNewReservationMutation();
   const { data: bikes } = useGetBikesQuery();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const selectedBike = bikes.find(
-      (each) => each.id === Number(bike.slice(0, 1))
+      (each) => each.id === Number(bike.split(".")[0])
     );
-
+    console.log(bikes);
     const userData = sessionStorage("get");
 
     const data = {
@@ -43,13 +46,14 @@ function Reservations() {
 
     addNewReservation(data)
       .unwrap()
-      .then(() =>
+      .then(() => {
         setModal({
           alert: true,
           message: `Yay! Your reservation for ${selectedBike.name} has been added successfully`,
           type: "success",
-        })
-      )
+        });
+        navigate("/reservations");
+      })
       .catch(() =>
         setModal({
           alert: true,
@@ -80,7 +84,11 @@ function Reservations() {
               label={"Due Date"}
               onChange={(e) => handleDueDateChange(e)}
             />
-            <Select label={"Bike"} handleChange={(e) => handleBikeChange(e)}>
+            <Select
+              label={"Bike"}
+              handleChange={(e) => handleBikeChange(e)}
+              payload={location.state}
+            >
               {bikes.map((bike) => (
                 <option key={bike.id}>
                   {bike.id}.{bike.name}

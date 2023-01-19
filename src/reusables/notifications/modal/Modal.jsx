@@ -6,7 +6,7 @@ import success from '../../../assets/success.jpg';
 function Modal({ message, onClose, type }) {
   return (
     <>
-      <div onClick={onClose} className='backdrop'></div>
+      <div onClick={onClose} className='backdrop flex flex-column'></div>
       <div className={styles.modalContainer + ' flex flex-column gap'}>
         <div className={styles.modalMessage + ' grid gap'}>
           {type === 'success' ? (

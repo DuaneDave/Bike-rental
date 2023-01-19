@@ -9,12 +9,14 @@ import { MdBookmarkRemove } from 'react-icons/md';
 
 import sessionStorage from '../../helpers/sessions';
 
-import styles from "./Sidebar.module.css";
-import Socials from "./Socials";
+import styles from './Sidebar.module.css';
+import Socials from './Socials';
+import ThemeToggle from './themeToggle/ThemeToggle';
+import Button from '../../reusables/button/Button';
 
 function Sidebar() {
   const [toggled, setToggled] = useState(false);
-  const avatar = JSON.parse(localStorage.getItem('user'));
+  const avatar = JSON.parse(localStorage.getItem('user')) || {};
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -25,22 +27,20 @@ function Sidebar() {
 
   return (
     <header className="flex center">
-      <button
+      <Button
         onClick={() => setToggled(!toggled)}
-        color={toggled ? 'green' : 'red'}
+        text={toggled ? '<<' : '>>'}
         className={toggled ? styles.move : styles.hamburger}
-      >
-        {toggled ? "<<" : ">>"}
-      </button>
+      />
 
       <span className={styles.avatar + ' flex center gap'}>
         {avatar.avatar ? (
-          <img
-            src={avatar.avatar}
-            onClick={() => navigate('/my_reservations')}
-          />
+          <img src={avatar.avatar} onClick={() => navigate('/reservations')} />
         ) : (
-          <span className="flex center">
+          <span
+            className="flex center"
+            onClick={() => navigate('/reservations')}
+          >
             <CiUser />
           </span>
         )}
@@ -48,31 +48,51 @@ function Sidebar() {
       </span>
       <nav
         className={
-          toggled ? styles.toggle + " flex flex-column" : "flex flex-column"
+          toggled ? styles.toggle + ' flex flex-column' : 'flex flex-column'
         }
       >
-        <Link to="/home" className={styles.logo}>
+        <Link
+          onClick={() => setToggled(!toggled)}
+          to="/home"
+          className={styles.logo}
+        >
           Trek
         </Link>
         <ul className="flex flex-column">
           <li>
-            <Link to="/reserve" className="flex gap">
+            <Link
+              onClick={() => setToggled(!toggled)}
+              to="/reserve"
+              className="flex gap"
+            >
               <RiReservedLine /> Reserve
             </Link>
           </li>
           <li>
-            <Link to="/reservations" className="flex gap">
+            <Link
+              onClick={() => setToggled(!toggled)}
+              to="/reservations"
+              className="flex gap"
+            >
               <AiOutlineProfile /> My Reservations
             </Link>
           </li>
           <li>
-            <Link to="/add_bike" className="flex gap">
+            <Link
+              onClick={() => setToggled(!toggled)}
+              to="/add_bike"
+              className="flex gap"
+            >
               <BiAddToQueue />
               Add a bike
             </Link>
           </li>
           <li>
-            <Link to="/delete_bike" className="flex gap">
+            <Link
+              onClick={() => setToggled(!toggled)}
+              to="/delete_bike"
+              className="flex gap"
+            >
               <MdBookmarkRemove />
               Remove a bike
             </Link>
