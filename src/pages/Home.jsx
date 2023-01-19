@@ -5,8 +5,6 @@ function Home() {
     <section className='white'>
       <div className='home-background'></div>
       <div className='content flex'>
-      <div className="home-background"></div>
-      <div className="content flex">
         <span>
           <h1>Trek</h1>
           <h2>find your next adventure starting from here</h2>
@@ -17,9 +15,7 @@ function Home() {
           <Link to='/reserve'>Make Reservation</Link>
         </div>
       </div>
-      </div>
     </section>
-
   );
 }
 
