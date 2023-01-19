@@ -46,24 +46,12 @@ function LogIn() {
         });
         return;
       } else {
-        // const reload = () => {
           sessionStorage('set', user);
         const userSec = sessionStorage('get');
         if (userSec) {
           navigate('/home');
           window.location.reload();
         }
-        //   window.location.reload();
-        //   return () => {
-        //     navigate('/home');
-        //   }
-        // }
-        // const reloaded = reload();
-        // setTimeout(() => {
-        //   reloaded();
-        //   // navigate('/home');
-        //   // window.location.reload();
-        // }, 100);
       }
     }
   };
