@@ -9,7 +9,6 @@ function Home() {
           <h1>Trek</h1>
           <h2>find your next adventure starting from here</h2>
         </span>
-
         <div className="home-cta flex">
           <Link to="/bikes">See Bikes</Link>
           <Link to='/reserve'>Make Reservation</Link>
