@@ -37,20 +37,6 @@ body.dark {
 a {
   text-decoration: none;
   color: var(--light-dark);
-  font-family:
-    inter,
-    avenir,
-    helvetica,
-    arial,
-    sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
 }
 
 ul {
@@ -299,30 +285,13 @@ form button {
 
   .home-cta {
     gap: 1.5rem;
-    transition: border-color 0.25s;
   }
+}
 
-  button:focus,
-  button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-  }
-
-  @media (prefers-color-scheme: light) {
-    :root {
-      color: #213547;
-      background-color: #fff;
-    }
-
-    a:hover {
-      color: #747bff;
-    }
-  }
-
-  .small img {
-    width: 400px;
-    height: 400px;
-    cursor: pointer;
-  }
+.small img {
+  width: 400px;
+  height: 400px;
+  cursor: pointer;
 }
 
 /* new styles added */
