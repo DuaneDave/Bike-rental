@@ -2,7 +2,7 @@ import React from "react";
 
 function DeleteBike() {
   return (
-    <div key={bike.id} className={}>
+    <div key={bike.id}>
       <img src={bike.images[Object.keys(bike.images)[0]]}></img>
       <div>
         <h2>
