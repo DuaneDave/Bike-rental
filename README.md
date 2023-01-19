@@ -114,7 +114,7 @@ After you're finished please remove all the comments and instructions!
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://deploy-preview-30--rentbikes.netlify.app/)
+- [Live Demo Link](https://deploy-preview-31--rentbikes.netlify.app)
 
 ## Back-end Repository <a name="backend-repo"></a>
 
