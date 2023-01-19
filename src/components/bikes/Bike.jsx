@@ -56,6 +56,7 @@ function Bike({ bike }) {
             ))}
           </div>
           <Link
+            className={styles.res}
             to="/reserve"
             state={{ id: bike.id, name: bike.name, brand: bike.brand }}
           >
