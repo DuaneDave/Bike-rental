@@ -4,7 +4,7 @@
   --light-dark: #3a3a3a96;
   --light: #fff;
   --dark: #000;
-  --primary: #339933;
+  --primary: #393;
   --body: white;
   --grey-back: rgb(236, 236, 236);
   --detail-dark: rgba(0, 0, 0, 0.8);
@@ -103,7 +103,7 @@ section {
 
 section.white {
   background: white;
-  transition: .5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 form {
