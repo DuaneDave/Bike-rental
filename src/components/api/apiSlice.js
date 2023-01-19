@@ -5,12 +5,33 @@ export const apiSlice = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://bike-rental-api.onrender.com/api/v1',
   }),
+  tagTypes: ['Bike'],
   endpoints: (builder) => ({
     getBikes: builder.query({
       query: () => '/bikes',
+      providesTags: ['Bike', 'Reservation'],
     }),
     getUsers: builder.query({
       query: () => '/users',
+    }),
+    getReservations: builder.query({
+      query: () => '/reservations',
+      providesTags: ['Reservation'],
+    }),
+    addBike: builder.mutation({
+      query: (bike) => ({
+        url: '/bikes',
+        method: 'POST',
+        body: bike,
+      }),
+      invalidatesTags: ['Bike'],
+    }),
+    deleteBike: builder.mutation({
+      query: (id) => ({
+        url: `/bikes/${id}`,
+        method: 'DELETE',
+      }),
+      invalidatesTags: ['Bike'],
     }),
     addUser: builder.mutation({
       query: (body) => ({
@@ -25,13 +46,25 @@ export const apiSlice = createApi({
         method: 'POST',
         body,
       }),
+      invalidatesTags: ['Reservation'],
+    }),
+    deleteReservation: builder.mutation({
+      query: (id) => ({
+        url: `reservations${id}`,
+        medthod: 'DELETE',
+      }),
+      invalidatesTags: ['Reservation'],
     }),
   }),
 });
 
 export const {
   useGetBikesQuery,
+  useGetReservationsQuery,
+  useAddBikeMutation,
+  useDeleteBikeMutation,
   useGetUsersQuery,
   useAddUserMutation,
   useAddNewReservationMutation,
+  useDeleteReservationMutation,
 } = apiSlice;

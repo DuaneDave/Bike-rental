@@ -7,7 +7,6 @@ import styles from "./Bike.module.css";
 
 const Bike = ({ bike }) => {
   const [color, setColor] = useState(null);
-  const [showdetails, setShowDetails] = useState(false);
   const changeColor = (input) => setColor(input);
 
   const navigate = useNavigate();
@@ -55,6 +54,7 @@ const Bike = ({ bike }) => {
           </div>
         </div>
       </div>
+      <button>reserve</button>
     </section>
   );
 };

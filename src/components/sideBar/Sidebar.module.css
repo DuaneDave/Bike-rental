@@ -38,7 +38,11 @@ nav ul {
 }
 
 .logout {
+  /* stylelint-disable */
+
   margin-block: 7rem 5.5rem;
+  /* stylelint-enable */
+
   color: var(--light-dark);
   cursor: pointer;
 }

@@ -242,6 +242,7 @@ form button {
 
 .content h1 {
   /* stylelint-disable */
+
   font-size: clamp(4rem, 4vw, 5rem);
   /* stylelint-enable */
 
@@ -261,9 +262,6 @@ form button {
   margin-top: 0.9rem;
   color: #ffffffd5;
   word-spacing: 2px;
-  /* stylelint-disable */
-  font-size: 0.875rem;
-  /* stylelint-enable */
 }
 
 .home-cta {
