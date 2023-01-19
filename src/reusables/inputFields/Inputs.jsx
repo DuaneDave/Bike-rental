@@ -1,6 +1,6 @@
 function Input({ label, type, value, onChange }) {
   return (
-    <div>
+    <div className='flex flex-column'>
       <label htmlFor={label}>{label}</label>
       <input type={type} onChange={onChange} value={value} />
     </div>

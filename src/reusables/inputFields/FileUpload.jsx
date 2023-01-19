@@ -1,19 +1,22 @@
-import { BsFileEarmarkDiff } from 'react-icons/bs';
+import { CiUser } from 'react-icons/ci'
 import { MdOutlineAttachFile } from 'react-icons/md';
 
-function FileUpload({ label, className, preview, handleFileChange, file }) {
+import styles from './Input.module.css';
+
+function FileUpload({ label, preview, handleFileChange, file }) {
   return (
-    <div>
-      <div className='view'>
+    <div className='flex flex-column gap center'>
+      <div className={styles.avatar}>
         {preview ? (
           <img src={preview} alt={file.name} />
         ) : (
-          <BsFileEarmarkDiff />
+          <span className='flex center'>
+            <CiUser />
+          </span>
         )}
       </div>
-      <label>
-        {label}
-        <MdOutlineAttachFile />
+      <label className={styles.upload}>
+        Upload photo <MdOutlineAttachFile />
         <input type='file' onChange={handleFileChange} />
       </label>
     </div>
