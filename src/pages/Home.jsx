@@ -12,7 +12,7 @@ function Home() {
 
         <div className="home-cta flex">
           <Link to="/bikes">See Bikes</Link>
-          <Link>Make Reservation</Link>
+          <Link to='/reserve'>Make Reservation</Link>
         </div>
       </div>
     </section>
