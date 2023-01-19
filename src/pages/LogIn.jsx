@@ -1,4 +1,3 @@
-import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { useGetUsersQuery } from '../components/api/apiSlice';
 import UseChange from '../hooks/UseChange';
@@ -36,7 +35,10 @@ function LogIn() {
         return;
       } else {
         sessionStorage('set', user);
-        navigate('/home');
+        setTimeout(() => {
+          navigate('/home');
+          window.location.reload();
+        }, 1000);
       }
     }
   };

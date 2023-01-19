@@ -196,9 +196,7 @@ form button {
   color: #ffffffd5;
   word-spacing: 2px;
   /* stylelint-disable */
-
   font-size: 0.875rem;
-
   /* stylelint-enable */
 }
 
@@ -208,20 +206,22 @@ form button {
   align-items: center;
 }
 
-.home-cta button {
+.home-cta a {
   background: #339933c4;
   transition: 0.3s ease;
   box-shadow: 0 0 16px #0000004d;
   backdrop-filter: blur(1rem);
   color: #f5f5f5;
+  border-radius: 30px;
+  font-size: 0.85rem;
   padding: 0.5rem 1rem;
 }
 
-.home-cta button:first-of-type {
+.home-cta a:first-of-type {
   padding-inline: 2.5rem;
 }
 
-.home-cta button:hover {
+.home-cta a:hover {
   background: #579157fb;
   backdrop-filter: blur(1rem);
   border: none;

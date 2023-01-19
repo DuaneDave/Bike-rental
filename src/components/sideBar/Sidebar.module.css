@@ -35,6 +35,8 @@ nav ul {
 
 .logout {
   margin-block: 7rem 5.5rem;
+  color: var(--light-dark);
+  cursor: pointer;
 }
 
 .logo,
@@ -77,6 +79,7 @@ nav ul li a:hover {
   position: fixed;
   z-index: 20;
   background: var(--light);
+  cursor: pointer;
 }
 
 .socials {
