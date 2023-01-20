@@ -180,10 +180,6 @@ To run tests, run the following command:
   npm run test or npm test
 ```
 
-### Deployment
-
-[Coming soon ...](https://)
-
 <!--
 Example:
 
