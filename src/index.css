@@ -1,0 +1,325 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap");
+
+:root {
+  --light-dark: #3a3a3a96;
+  --light: #fff;
+  --dark: #000;
+  --primary: #393;
+  --body: white;
+  --grey-back: rgb(236, 236, 236);
+  --detail-dark: rgba(0, 0, 0, 0.8);
+  --form-background: #f8f8f8;
+  --transparent: transparent;
+  --grey: #ccc;
+  --greeting: #105210be;
+}
+
+body.dark {
+  --light-dark: rgba(255, 255, 255, 0.918);
+  --light: rgb(17, 19, 16);
+  --dark: rgba(255, 255, 255, 0.98);
+  --primary: #05a005;
+  --body: rgb(16, 17, 15);
+  --grey-back: rgba(236, 236, 236, 0.096);
+  --detail-dark: rgba(255, 255, 255, 0.9);
+  --form-background: rgb(16, 17, 15);
+  --transparent: rgb(16, 17, 15);
+  --grey: rgba(204, 204, 204, 0.116);
+  --greeting: #42ca42be;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--light-dark);
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background: var(--primary);
+  border-radius: 30px;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-family: inherit;
+}
+
+select {
+  background: var(--transparent);
+}
+
+select,
+input:not([type="file"]) {
+  border-radius: 20px;
+  border: 1px solid var(--grey);
+  padding: 0.2rem 1rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+  background: var(--transparent);
+  letter-spacing: 1px;
+  width: 100%;
+  color: var(--light-dark);
+}
+
+select,
+input:not([type="file"]):focus {
+  border: none;
+  outline: 1px solid #05a00580;
+}
+
+select::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+select::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 20px;
+}
+
+label {
+  font-size: 0.8rem;
+  color: var(--light-dark);
+  margin-bottom: 0.5rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+  line-height: 1;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--dark);
+  font-weight: 300;
+}
+
+section {
+  background: var(--body);
+}
+
+section.white {
+  background: white;
+  transition: 0.5s ease-in-out;
+}
+
+form {
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+form span {
+  font-size: 0.8rem;
+  justify-content: center;
+  color: var(--light-dark);
+  margin-top: 0.3rem;
+}
+
+form button {
+  align-self: center;
+  padding-inline: 5rem;
+  margin-top: 1rem;
+}
+
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.gap {
+  gap: 1rem;
+}
+
+.backdrop {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(3rem);
+  position: fixed;
+  top: 0;
+  padding: 1rem;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+}
+
+.redirect {
+  color: steelblue;
+}
+
+.redirect:hover {
+  text-decoration: underline;
+}
+
+.form-container {
+  background: var(--light);
+  backdrop-filter: blur(3rem);
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
+  padding: 1.5rem 0.5rem;
+  border-radius: 15px;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.greeting h2 {
+  font-weight: normal;
+  color: var(--greeting);
+  margin-bottom: 0.3rem;
+}
+
+.greeting p {
+  color: var(--light-dark);
+  margin-bottom: 0.6rem;
+  font-size: 0.85rem;
+  word-spacing: 2px;
+}
+
+.home-background {
+  background-image: url("https://trek.scene7.com/is/image/TrekBicycleProducts/Farley96_23_37020_A_Primary?$responsive-pjpg$&cache=on,on&wid=1920&hei=1440");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.home-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.content {
+  width: 100%;
+  flex-direction: column;
+  gap: 2.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--light);
+  padding: 1rem;
+}
+
+.content h1 {
+  /* stylelint-disable */
+  font-size: clamp(4rem, 4vw, 5rem);
+  /* stylelint-enable */
+  font-weight: 700;
+  font-style: italic;
+  color: white;
+}
+
+.content h2 {
+  font-family: "Poppins", sans-serif;
+  /* stylelint-disable */
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  /* stylelint-enable */
+  font-weight: 400;
+  margin-top: 0.9rem;
+  color: #ffffffd5;
+  word-spacing: 2px;
+}
+
+.home-cta {
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-cta a {
+  background: #339933c4;
+  transition: 0.3s ease;
+  box-shadow: 0 0 16px #0000004d;
+  backdrop-filter: blur(1rem);
+  color: #f5f5f5;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+}
+
+.home-cta a:first-of-type {
+  padding-inline: 2.5rem;
+}
+
+.home-cta a:hover {
+  background: #579157fb;
+  backdrop-filter: blur(1rem);
+  border: none;
+}
+
+@media screen and (min-width: 768px) {
+  .content {
+    gap: 3rem;
+  }
+
+  .home-cta {
+    gap: 1.5rem;
+  }
+}
+
+.small img {
+  width: 400px;
+  height: 400px;
+  cursor: pointer;
+}
+
+/* new styles added */
+.swiper-button {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.swiper-button svg {
+  font-size: 2rem;
+  color: #0d940d46;
+}
+
+.swiper-button svg:hover,
+.swiper-button svg:active {
+  color: #0d940d;
+}
+
+.image-swiper-button-prev {
+  left: 5px;
+}
+
+.image-swiper-button-next {
+  right: 5px;
+}
+
+.swiper-button-disabled {
+  opacity: 0.5;
+}
